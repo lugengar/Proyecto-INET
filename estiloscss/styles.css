@@ -1,7 +1,5 @@
 /*IMPORTAR FUENTES DE TEXTO*/
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
 /*ESTILOS GLOBALES*/
 * {
     font-size: 2dvh;
@@ -23,15 +21,15 @@ button:hover {
 h1,
 button,
 .botonuni {
-    font-family: "Encode Sans", sans-serif;
-    font-weight: 700;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
     font-style: normal;
     font-size: 2dvh;
 }
 
 p,
 a {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -39,14 +37,14 @@ a {
 input,
 select,
 option {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 input[type="submit"] {
-    font-family: "Encode Sans", sans-serif;
-    font-weight: 700;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -65,6 +63,8 @@ input[type="submit"] {
 .container {
     left: 0;
     top: 0;
+    background-color: #333333;
+
     position: absolute;
     height: max-content;
     width: 100%;
@@ -74,7 +74,7 @@ input[type="submit"] {
         "HEA HEA HEA"
         "MAI MAI MAI"
         "FOO FOO FOO";
-    grid-template-rows: 100dvh 7dvh auto 60dvh;
+    grid-template-rows: 90dvh 7dvh auto 60dvh;
     grid-template-columns: auto auto auto;
 }
 
@@ -89,7 +89,6 @@ input[type="submit"] {
     z-index: 1000;
     top: 7dvh;
     opacity: 0;
-    background-color: #00aec3;
     grid-area: BAR;
     display: flex;
     pointer-events: none;
@@ -97,9 +96,11 @@ input[type="submit"] {
     align-items: center;
     gap: 1dvh;
     flex-wrap: wrap;
-    box-shadow: 0 1dvh 2dvh rgba(0, 0, 0, 0.2);
     transition: opacity 0.5s;
+    background-color: #333333;
 }
+
+
 
 .barradebusqueda.activo {
     pointer-events: all;
@@ -126,7 +127,7 @@ input[type="submit"] {
 .barradebusqueda input[type="text"],
 .barradebusqueda select {
     border: none;
-    border-radius: 1.5dvh;
+    border-radius: 25dvh;
     height: 5dvh;
     color: gray;
     width: 0dvh;
@@ -134,6 +135,9 @@ input[type="submit"] {
     transition: width 2s;
 
 }
+
+
+
 .barradebusqueda.activo input[type="text"],
 .barradebusqueda.activo select {
     width: 30dvh;
@@ -166,7 +170,8 @@ input[type="submit"] {
     grid-area: HEA;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: #333333;
+
     z-index: 1000;
     padding: 0.5dvh;
     box-shadow: 0 1dvh 2dvh rgba(0, 0, 0, 0.2);
@@ -182,7 +187,7 @@ input[type="submit"] {
 .boton_nose_que_estudiar {
     display: block;
     grid-area: BTN;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #00aec3;
@@ -249,7 +254,7 @@ input[type="submit"] {
 .imagen {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: max-content;
     top: 0;
     left: 100%;
     transition: left 0.5s ease-in-out;
@@ -275,25 +280,16 @@ input[type="submit"] {
 }
 
 .texto1 {
-    box-shadow: 0 1dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
-    font-size: 5dvh;
-    background-color: #e81f76;
-    color: black;
-    display: inline;
+    font-size: 4dvh;
     padding: 0.2dvh 1dvh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     color: white;
+    grid-area: TEXT1;
 }
 
-.texto2 {
-    box-shadow: 0 1dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
-    font-size: 5dvh;
-    background-color: #00aec3;
-    color: black;
-    display: inline;
-    padding: 0.2dvh 1dvh;
-    color: white;
-    max-width: 4dvh;
-}
 
 .filtro {
     width: 100%;
@@ -301,26 +297,21 @@ input[type="submit"] {
     position: absolute;
     left: 0;
     top: 0;
-    background: linear-gradient(to top, black, transparent);
+    background:radial-gradient(ellipse 80% 80% at 50% 20%, transparent, #333333 95%);
     display: grid;
     grid-template-areas:
         ". . ."
         ". TEXT1 ."
-        ". TEXT2 ."
+        ". . ."
         "CIR CIR CIR"
     ;
     gap: 1dvh;
-    grid-template-rows: 1fr max-content max-content 10dvh;
-    grid-template-columns: 5dvh 50% 1fr;
+    grid-template-rows: 1fr max-content 1fr 10dvh;
+    grid-template-columns: 1fr 50% 1fr;
 }
 
-.filtro :nth-child(1) {
-    grid-area: TEXT1;
-}
 
-.filtro :nth-child(2) {
-    grid-area: TEXT2;
-}
+
 
 .logo_pba_vertical {
     width: 30dvh;
@@ -341,16 +332,15 @@ input[type="submit"] {
 
 .main {
     grid-area: MAI;
-    background-color: white;
+
     display: grid;
     gap: 5dvh;
     grid-template:
-        "BOT BOT BOT"
         "BAR BAR BAR"
         "UNI UNI UNI"
         "VOL VOL VOL"
         ". . .";
-    grid-template-rows: max-content 10dvh auto 10dvh;
+    grid-template-rows: 10dvh auto 10dvh;
     grid-template-columns: auto auto auto;
 }
 
@@ -716,19 +706,15 @@ body.inactive .overlay {
     padding-right: 10%;
 }
 .casita_superior {
-    width: 6dvh;
-    height: 6dvh;
-    background-color: #00adc1;
-
-    background-image: url(../imagenes/iconos/lupa.svg);
-    background-size: 4dvh;
+    width: 12dvh;
+    height: 12dvh;
+    background-image: url(../imagenes/SVG/logo.svg);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    left: 2dvh;
-    top: 2dvh;
-    border-radius: 25dvh;
-    box-shadow: 0.5dvh 0.5dvh 1dvh rgba(0, 0, 0, 0.2);
+    left: 4dvh;
+    top: 4dvh;
 }
 .etiqueta{
     text-decoration: none;

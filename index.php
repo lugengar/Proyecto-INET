@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estiloscss/styles.css">
-    <link rel="icon" href="https://abc.gob.ar/core/themes/abc/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="imagenes/SVG/icono.svg" type="image/vnd.microsoft.icon">
     <title>Ofertas de Educación Superior Región 6</title>
     <meta name="description" content="Ofertas de Educación Superior Región 6">
 </head>
@@ -17,19 +17,16 @@
     <div class="container">
         <main class="carrusel">
             <div class="imagenes">
-                <div class="imagen activo" style="background-image: url('imagenes/otros/estudiantes.jpg');"></div>
+            <video autoplay muted class="imagen activo">
+                <source src="videos/futbol3.mp4" type="video/mp4">
+            </video>
+
                 <div class="imagen" style="background-image: url('imagenes/otros/gente.jpg');"></div>
                 <div class="imagen" style="background-image: url('imagenes/otros/graduados.jpg');"></div>
                
             </div>
             <div class="filtro">
-                <div class="contenidotexto">
-                    <h1 class="texto1">Ofertas de Educación Superior Región 6</h1>
-                    
-                </div>
-                <div class="contenidotexto">
-                    <h1 class="texto2">Ahora es más fácil encontrar la universidad adecuada.</h1>
-                </div>
+            <h1 class="texto1">Ver productos relacionados con fútbol</h1>
                 <div class="circulos">
                     <span class="circulo activo"></span>
                     <span class="circulo"></span>
@@ -37,7 +34,6 @@
                    
                 </div>
             </div>
-            <div class="logo_pba_vertical"></div>
             <a onclick="redirigir('identificador1')" class="casita_superior"></a>
         </main>
         <header class="header" id="header">
@@ -63,39 +59,7 @@
 
 
             <div class="identificador" id="identificador1" style="top: 100dvh;"></div>
-            <div class="botones" id="botones">
-
-
-                <!-- BOTON PARA EL MAPA -->
-
-                <!-- ELIMINA ESTA LINEA
-
-                <button class="boton pop" >
-                    <div class="imagenboton" style="background-image: url(imagenes/iconos/ubicacion.svg);"></div>
-                    <h1>Buscar universidad por distrito</h1>
-                </button>
-
-
-                Y ESTA LINEA-->
-
-
-
-                <button class="boton " onclick="barradebusqueda('distrito')">
-                    <div class="imagenboton" style="background-image: url(imagenes/iconos/ubicacion.svg);"></div>
-                    <h1>Buscar universidad por distrito</h1>
-                </button>
-                <button class="boton" onclick="barradebusqueda('carrera')">
-                    <div class="imagenboton" style=" background-image: url(imagenes/iconos/sombrero.svg);"></div>
-                    <h1>Buscar universidad por carrera</h1>
-                </button>
-                <button class="boton" onclick="barradebusqueda('tecnicatura')"><div class="imagenboton" style=" background-image: url(imagenes/iconos/diploma.svg);"></div>
-                    <h1>Buscar universidad por tecnicatura</h1>
-                </button>
-                <button class="boton" onclick="barradebusqueda('nombre')">
-                    <div class="imagenboton" style=" background-image: url(imagenes/iconos/nombre.svg);"></div>
-                    <h1>Buscar por nombre de la universidad</h1>
-                </button>
-            </div>
+           
             <form class="barradebusqueda activo" id="nombre" method="GET" action="./index.php#identificador2">
                 <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
                 <input type="text" name="busqueda" placeholder="Nombre del establecimiento" required>
