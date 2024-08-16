@@ -17,7 +17,7 @@
     <div id="barralateral" class="barralateral">
         <a class="botonsalir" onclick="closeMenu()">&times;</a>
         <div class="contenidobarra">
-        <a href="#">Inicio</a>
+        <a href="./Formularios/signin.php">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Contacto</a>
         <a href="#">Contacto</a>
