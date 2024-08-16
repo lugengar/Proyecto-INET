@@ -11,8 +11,8 @@ function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     echo('
         <div class="icon">'.$icon.'</div>
         <h1 class="nombreuni">'.$nombre.'</h1>
-        <p class="descripcionuni">$'.$precio.'</p>
-        <a href="./universidad.php?universidad='.$id.'"  class="botonuni">SABER MAS..</a>
+        <p class="descripcionuni">Precio: $'.$precio.'</p>
+        <a href="./universidad.php?universidad='.$id.'"  class="botonuni"></a>
     </div>
     ');
 }

@@ -20,6 +20,27 @@ function crearcategorias(){
     categorias($categorias);
 
 }
+function productosdelcarrito(){
+    global $conn;
+
+    session_start();
+    $id_producto = $_SESSION['pedido']['productos'];
+    $cantidad = $_SESSION['pedido']['cantidad'];
+    if (!empty($_SESSION['pedido'])) {
+        $sql = "SELECT * FROM producto WHERE id_producto IN (" . implode(",",$_SESSION['pedido']['productos']) . ")";
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            foreach ($result as $index => $row) {
+                $cantidad = isset($cantidad[$index]) ? $cantidad[$index] : 0;
+                productocarrito($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"],$cantidad);
+            }
+        } else {
+            echo "<h1>NO HAY PRODUCTOS AUN</h1>";
+        }
+    } else {
+        echo "<h1>NO HAY PRODUCTOS AUN</h1>";
+    }
+}
 function precio(){
 
     $url_actual = $_SERVER['REQUEST_URI'];
