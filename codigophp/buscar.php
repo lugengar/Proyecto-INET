@@ -53,7 +53,7 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
     $busqueda = $_GET['busqueda'];
     if ($busqueda != null && $categoria != null){
         $param = "%$busqueda%";
-        $stmt = $conn->prepare("SELECT * FROM producto WHERE nombre_producto LIKE ? AND fk_categoria = ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ? AND p.fk_categoria = ?");
 
         
         $stmt->bind_param("ss", $param,$categoria);
@@ -61,14 +61,14 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
 
         $result = $stmt->get_result();
     }else if ($categoria != null){
-        $stmt = $conn->prepare("SELECT * FROM producto WHERE fk_categoria = ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.fk_categoria = ?");
         $stmt->bind_param("s", $categoria);
         $stmt->execute();
     
         $result = $stmt->get_result();
     }else if ($busqueda != null){
         $param = "%$busqueda%";
-        $stmt = $conn->prepare("SELECT * FROM producto WHERE nombre_producto LIKE ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ?");
     
         $stmt->bind_param("s", $param);
         $stmt->execute();
@@ -76,7 +76,7 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
         $result = $stmt->get_result();
     }
 }else{
-    $stmt = $conn->prepare("SELECT * FROM producto");
+    $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria");
   
     $stmt->execute();
 
@@ -88,7 +88,7 @@ if ($result != null){
     echo "<p class= 'error' >No se encontraron resultados para la búsqueda: " . htmlspecialchars($busqueda)."</p>";
 }else{
     while ($row = $result->fetch_assoc()) {
-        producto($row["id_producto"], $row["nombre_producto"], $row["precio"], null);
+        producto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"], null);
     }
    /*
     while ($row = $result->fetch_assoc()) {

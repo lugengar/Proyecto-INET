@@ -79,7 +79,6 @@
               <?php
                 precio();
               ?>
-
             </form>
            
             <div class="productos" id="uni" style=" position:relative;">
@@ -116,4 +115,6 @@
 <script src="codigojs/ventanas.js"></script>
 <script src="codigojs/botonesbarra.js"></script>
 <script src="codigojs/scroll.js"></script>
-
+<script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

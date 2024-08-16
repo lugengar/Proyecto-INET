@@ -1,5 +1,6 @@
 /*IMPORTAR FUENTES DE TEXTO*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+
 /*ESTILOS GLOBALES*/
 * {
     font-size: 2dvh;
@@ -35,19 +36,21 @@ a {
 }
 
 input,
-select{
+select {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
     
 }
+
 option {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #333333;
 }
+
 input[type="submit"] {
     font-family: "Russo One", sans-serif;
     font-weight: 400;
@@ -84,12 +87,13 @@ input[type="submit"] {
     grid-template-columns: auto auto auto;
 }
 
-.identificador{
+.identificador {
     width: 20dvh;
     position: absolute;
     left: 0;
     height: 20dvh;
 }
+
 .barradebusqueda {
     gap: 1dvh;
     position: sticky;
@@ -114,7 +118,7 @@ input[type="submit"] {
     grid-area: VOL;
     z-index: 1040;
     top: 7dvh;
-padding-bottom: 0%;
+    padding-bottom: 0%;
 
 }
 
@@ -130,6 +134,7 @@ padding-bottom: 0%;
     border-radius: 25dvh;
     padding-left: 2dvh;
 }
+
 .barradebusqueda a {
     font-size: 1.8dvh;
     border: none;
@@ -145,7 +150,8 @@ padding-bottom: 0%;
     text-align: center;
     text-decoration: none;
 }
-.barradebusqueda div{
+
+.barradebusqueda div {
     border-radius: 25dvh;
     background-color: white;
 }
@@ -206,14 +212,16 @@ padding-bottom: 0%;
     grid-template-columns: 8dvh auto 8dvh;
     padding-right: 1dvh;
 }
-.botonsalir{
+
+.botonsalir {
     grid-area: BTN1;
     color: white;
     background-color: transparent;
     border: none;
     font-size: 6dvh;
 }
-.contenidobarra{
+
+.contenidobarra {
     grid-area: CONT;
     display: flex;
     position: relative;
@@ -222,10 +230,12 @@ padding-bottom: 0%;
     align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
-    direction: rtl; /* Cambiar dirección del contenido */
-   
+    direction: rtl;
+    /* Cambiar dirección del contenido */
+
 }
-.contenidobarra a{
+
+.contenidobarra a {
     width: 100%;
     height: 20dvh;
     border-bottom: #00aec3;
@@ -235,12 +245,12 @@ padding-bottom: 0%;
     align-items: center;
     color: white;
     text-decoration: none;
-    
+
 }
 
 
 
-.barralateral{
+.barralateral {
     width: 0dvh;
     height: 100%;
     position: fixed;
@@ -252,31 +262,34 @@ padding-bottom: 0%;
     overflow: hidden;
     display: grid;
     grid-template-areas:
-    ". BTN1"
-    "CONT CONT"
-    ". ."
+        ". BTN1"
+        "CONT CONT"
+        ". ."
     ;
     grid-template-rows: 8dvh auto 4dvh;
     grid-template-columns: auto 8dvh;
-   
+
     background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
     background-position: left bottom, right top;
     background-repeat: no-repeat;
     background-size: 30dvh;
 }
-.barralateral.carro{
+
+.barralateral.carro {
     grid-template-areas:
-    "BTN2 BTN2"
-    "CONT CONT"
-    ". BTN1"
+        "BTN2 BTN2"
+        "CONT CONT"
+        ". BTN1"
     ;
     grid-template-rows: 8dvh auto 8dvh;
     grid-template-columns: auto 8dvh;
 }
-.pagar{
+
+.pagar {
     grid-area: BTN2;
 }
-.carrito{
+
+.carrito {
     position: fixed;
     right: 5dvh;
     bottom: 5dvh;
@@ -291,7 +304,8 @@ padding-bottom: 0%;
     background-size: 5dvh;
     z-index: 1050;
 }
-.barralateral.abierto{
+
+.barralateral.abierto {
     width: 50dvh;
 
 }
@@ -300,17 +314,21 @@ padding-bottom: 0%;
     background-color: #333333;
 
 }
-.header.visible .logo{
+
+.header.visible .logo {
     opacity: 100%;
 
 }
+
 .header.hidden {
     background-color: transparent;
 }
-.header.hidden .logo{
+
+.header.hidden .logo {
     opacity: 0%;
     pointer-events: none;
 }
+
 .user {
     display: block;
     grid-area: BTN;
@@ -345,9 +363,11 @@ padding-bottom: 0%;
     right: 0%;
     top: 0.5dvh;
 }
-.volverarriba button{
+
+.volverarriba button {
     background-color: transparent;
 }
+
 .logo {
     transition: opacity 0.2s;
     grid-area: LOG;
@@ -356,6 +376,7 @@ padding-bottom: 0%;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .logocarrusel {
     width: 10dvh;
     height: 10dvh;
@@ -368,6 +389,7 @@ padding-bottom: 0%;
     left: 5dvh;
     top: 5dvh;
 }
+
 /*ESTILOS DEL CARRUCEL DE IMAGENES INICIAL*/
 
 .carrusel {
@@ -382,7 +404,8 @@ padding-bottom: 0%;
     align-items: center;
     background-color: black;
 }
-.imagenes{
+
+.imagenes {
     display: flex;
     position: relative;
     justify-content: center;
@@ -393,18 +416,21 @@ padding-bottom: 0%;
     left: 0%;
     position: absolute;
 }
+
 .circulos {
     align-items: center;
     grid-area: CIR;
     display: flex;
     justify-content: center;
-   
+
     gap: 2dvh;
     z-index: 1;
 }
+
 .fade-out {
     opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Controla la duración del desvanecimiento */
+    transition: opacity 0.3s ease-in-out;
+    /* Controla la duración del desvanecimiento */
 }
 
 .circulo {
@@ -423,7 +449,7 @@ padding-bottom: 0%;
 .imagen {
     position: absolute;
     width: 100%;
-    height:100%;
+    height: 100%;
     top: 0;
     left: 100%;
     transition: left 0.5s ease-in-out;
@@ -432,9 +458,10 @@ padding-bottom: 0%;
     opacity: 0;
     object-fit: cover;
 }
-.imagen source{
+
+.imagen source {
     width: 100%;
-height: max-content;
+    height: max-content;
 }
 
 .imagen.activo {
@@ -449,10 +476,11 @@ height: max-content;
 
 .circulo.activo {
     background-color: #75AADB;
-transform: translateY(-1dvh) rotate(25deg);
+    transform: translateY(-1dvh) rotate(25deg);
     /* Color del circulo activo */
 }
-#textura{
+
+#textura {
     background-image: url(../imagenes/SVG/textura.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -494,7 +522,7 @@ transform: translateY(-1dvh) rotate(25deg);
     position: absolute;
     left: 0;
     top: 0;
-    background:radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
+    background: radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
     display: grid;
     grid-template-areas:
         ". . ."
@@ -559,8 +587,8 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 .universidad {
-    width: 45dvh;
-    height: max-content;
+    width: 35dvh;
+    height: fit-content;
     background-color: white;
     border-radius: 2dvh;
     box-shadow: 0 0.5dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
@@ -571,6 +599,7 @@ transform: translateY(-1dvh) rotate(25deg);
     flex-wrap: wrap;
     overflow: hidden;
     position: relative;
+    padding: 15px;
 }
 
 .universidad .botonuni {
@@ -581,19 +610,16 @@ transform: translateY(-1dvh) rotate(25deg);
     width: 18dvh;
     background-color: #e81f76;
     color: white;
-    transform: translateY(-2.5dvh);
+    /* transform: translateY(-2.5dvh); */
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-
 }
 
 .universidad .botonuni:hover {
-
-    transform: translateY(-2.5dvh) scale(1.1);
-
+    transform: translateY(-1dvh) scale(1.1);
 }
 
 .universidad .imagenesuni {
@@ -637,11 +663,29 @@ transform: translateY(-1dvh) rotate(25deg);
     opacity: 1;
 }
 
+.universidad .icon {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 25dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.2dvh;
+}
+
+.universidad ion-icon {
+    font-size: 9rem;
+}
+
+.universidad i {
+    font-size: 7.4rem;
+}
+
 .universidad .nombreuni {
-    padding-top: 1dvh;
+    /* padding-top: 1dvh; */
     font-size: 3dvh;
     width: 100%;
-    height: max-content;
+    height: 6dvh;
     padding-left: 2dvh;
     padding-right: 2dvh;
     color: #00adc1;
@@ -658,14 +702,15 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 .universidad .descripcionuni {
+    font-weight: bold;
     width: 100%;
-    height: 20dvh;
-    overflow-y: auto;
-    overflow-y: auto;
+    height: 2dvh;
+    /* overflow-y: auto; */
+    /* overflow-y: auto; */
     padding-right: 2dvh;
     padding-left: 2dvh;
     text-align: start;
-    transform: translateY(-3dvh);
+    /* transform: translateY(-3dvh); */
 }
 
 /*ESTILOS DE LOS BOTONES DE COLORES*/
@@ -707,7 +752,7 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 .botones {
-   
+
     padding-bottom: 5dvh;
     grid-area: BOT;
     display: flex;
@@ -750,7 +795,6 @@ transform: translateY(-1dvh) rotate(25deg);
     background-color: #00adc1;
 }
 
-
 /*ESTILOS EL FOOTER*/
 .footer {
     grid-area: FOO;
@@ -768,7 +812,7 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 .footer .imagenfooter {
-    background-repeat:round ;
+    background-repeat: round;
     background-size: 20dvh;
     background-position: top;
     height: 40dvh;
@@ -865,14 +909,16 @@ body.inactive .pop2,
 body.inactive .overlay {
     pointer-events: auto;
 }
-.etiquetas{
+
+.etiquetas {
     width: 100%;
     height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.barraseparadora{
+
+.barraseparadora {
     border-top: #FCBF49 solid 0.5dvh;
     height: 0.01dvh;
     width: 60%;
@@ -880,7 +926,7 @@ body.inactive .overlay {
     margin-right: 20%;
 }
 
-.etiqueta{
+.etiqueta {
     text-decoration: none;
     background-color: #75AADB;
     color: white;
@@ -904,7 +950,7 @@ body.inactive .overlay {
 
 /*ESTILOS PARA LA VERSION DE MOBILES*/
 @media (max-width: 768px) {
-    .barradebusqueda{
+    .barradebusqueda {
         padding-top: 2dvh;
     }
 
@@ -916,18 +962,19 @@ body.inactive .overlay {
     }
 
 
-    .barralateral.abierto{
+    .barralateral.abierto {
         transition: none;
         width: 100%;
-  
+
     }
+
     .filtro {
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        background:radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
+        background: radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
         display: grid;
         grid-template-areas:
             ". . ."
