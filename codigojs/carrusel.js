@@ -1,65 +1,25 @@
-//SE ENCARGA DE HACER UTILES LOS BOTONES DE LOS CARRUCELES
-const imagenes = document.querySelectorAll('.imagen');
+const videoPlayer = document.getElementById('videoPlayer');
+const videoSource = document.getElementById('videoSource');
 
-if(imagenes.length > 1){
-circulos2.forEach((circulo) => {
-    circulo.addEventListener('click', () => {
-        let imagenes = circulo.parentNode.parentNode.querySelectorAll(".imagenuni")
-        let circulos = circulo.parentNode.querySelectorAll(".circulo2")
-        let index = Array.from(circulos).indexOf(circulo);
-        circulos.forEach(circulo => circulo.classList.remove('activo'));
-        imagenes.forEach(imagen => imagen.classList.remove('activo'));
-        
-        circulo.classList.add('activo');
-        imagenes[index].classList.add('activo');
-    });
-});
-const circulos2 = document.querySelectorAll('.circulo2');
-    
+const videos = [
+    'futbol.mp4',
+    'basket.mp4',
+    'tenis.mp4'
+];
 
-const circulos = document.querySelectorAll('.circulo');
-let currentIndex = 0;
-let intervalId;
-let click = false;
-function changeImage(index) {
-    const imagenActiva = document.querySelector('.imagen.activo');
-    const nuevaImagen = imagenes[index];
-    circulos.forEach(circulo => circulo.classList.remove('activo'));
-    circulos[index].classList.add('activo');
+let currentVideoIndex = 0;
 
-    if (imagenActiva === nuevaImagen) return;
-
-    imagenActiva.classList.add('saliente');
-    imagenActiva.addEventListener('transitionend', () => {
-        imagenActiva.classList.remove('saliente');
-        imagenActiva.classList.remove('activo');
-        if(click == true){
-            setTimeout(function cargandof(){
-                click = false;
-            },100)
-        }
-    }, { once: true });
-    nuevaImagen.classList.add('activo');
+function changeVideo(index) {
+    currentVideoIndex = index;
+    videoSource.src = "/videos/"+videos[currentVideoIndex];
+    videoPlayer.load();
+    videoPlayer.play();
 }
 
-function resetInterval() {
-    clearInterval(intervalId);
-    intervalId = setInterval(() => {
-        currentIndex = (currentIndex + 1) % imagenes.length; 
-        changeImage(currentIndex);
-    }, 5000);
-}
-
-circulos.forEach((circulo, index) => {
-    circulo.addEventListener('click', () => {
-        if(click == false){
-            click = true;
-            currentIndex = index; 
-            changeImage(index);
-            resetInterval();
-        }
-    });
+videoPlayer.addEventListener('ended', function() {
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    videoSource.src = "/videos/"+videos[currentVideoIndex];
+    videoPlayer.load();
+    videoPlayer.play();
 });
 
-resetInterval();
-}

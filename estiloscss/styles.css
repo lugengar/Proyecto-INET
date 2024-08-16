@@ -292,11 +292,13 @@ input[type="submit"] {
 }
 
 .circulo {
-    width: 2dvh;
-    height: 2dvh;
-    background-color: white;
+    transition: all 0.5s;
+    width: 8dvh;
+    height: 8dvh;
     border-radius: 50%;
-
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     cursor: pointer;
 }
 
@@ -329,6 +331,7 @@ height: max-content;
 
 .circulo.activo {
     background-color: #00adc1;
+transform: translateY(-1dvh) rotate(25deg);
     /* Color del circulo activo */
 }
 #textura{

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estiloscss/styles.css">
     <link rel="icon" href="imagenes/SVG/icono.svg" type="image/vnd.microsoft.icon">
-    <title>Ofertas de Educación Superior Región 6</title>
-    <meta name="description" content="Ofertas de Educación Superior Región 6">
+    <title>Podium</title>
+    <meta name="description" content="Podium">
 </head>
 <body>
 <div id="textura"></div>
@@ -16,8 +16,8 @@
     <div class="container" >
         <main class="carrusel ">
             <div class="imagenes">
-            <video autoplay muted class="imagen activo">
-                <source src="videos/futbol3.mp4" type="video/mp4">
+            <video autoplay muted class="imagen activo" id="videoPlayer">
+                <source src="videos/futbol.mp4" type="video/mp4" id="videoSource">
             </video>
 
                 <div class="imagen" style="background-image: url('imagenes/otros/gente.jpg');"></div>
@@ -27,9 +27,9 @@
             <div class="filtro" >
             <a class="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
-                    <span class="circulo activo"></span>
-                    <span class="circulo"></span>
-                    <span class="circulo"></span>
+                    <button onclick="changeVideo(0)" class="circulo activo" style="background-image: url('imagenes/SVG/futbol.svg');"></button>
+                    <button onclick="changeVideo(1)" class="circulo" style="background-image: url('imagenes/SVG/basket.svg');"></button>
+                    <button onclick="changeVideo(2)" class="circulo" style="background-image: url('imagenes/SVG/tenis.svg');"></button>
                    
                 </div>
             </div>
