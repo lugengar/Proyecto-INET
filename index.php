@@ -9,11 +9,12 @@
     <meta name="description" content="Ofertas de Educación Superior Región 6">
 </head>
 <body>
+<div class="textura"></div>
+
     <?php
         include "./codigophp/buscar_universidades.php";
     ?>
         <div class="overlay" id="overlay"></div>
-    
     <div class="container">
         <main class="carrusel">
             <div class="imagenes">
@@ -26,7 +27,7 @@
                
             </div>
             <div class="filtro">
-            <h1 class="texto1">Ver productos relacionados con fútbol</h1>
+            <a class="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
                     <span class="circulo activo"></span>
                     <span class="circulo"></span>
@@ -61,10 +62,20 @@
             <div class="identificador" id="identificador1" style="top: 100dvh;"></div>
            
             <form class="barradebusqueda activo" id="nombre" method="GET" action="./index.php#identificador2">
-                <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
-                <input type="text" name="busqueda" placeholder="Nombre del establecimiento" required>
-                <input type="hidden" name="tipo" value="nombre" required>
-                <input type="submit" value="Buscar">
+            
+            
+                
+                <div>
+                    <input type="hidden" name="tipo" value="nombre" required><input type="text" name="busqueda" placeholder="Nombre del establecimiento" required>
+                    <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
+                </div>
+                <select name="busqueda" id="" required>
+                <option value="">Elija una carrera</option>
+                
+            </select>
+                <p>Mejor precio<input type="checkbox" name="" id="" value=""></p>
+                <p>Sin filtro<input type="checkbox" name="" id="" value=""></p>
+
             </form>
             <form class="barradebusqueda" id="distrito" method="GET" action="./index.php#identificador2">
             <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">

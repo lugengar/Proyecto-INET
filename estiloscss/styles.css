@@ -94,10 +94,10 @@ input[type="submit"] {
     pointer-events: none;
     justify-content: center;
     align-items: center;
-    gap: 1dvh;
     flex-wrap: wrap;
     transition: opacity 0.5s;
-    background-color: #333333;
+    background: linear-gradient(#333333 20%, transparent);
+
 }
 
 
@@ -119,36 +119,74 @@ input[type="submit"] {
     height: 5dvh;
 }
 
-.barradebusqueda input,
-.barradebusquedaselect {
-    box-shadow: 0 0.5dvh 1dvh rgba(0, 0, 0, 0.2);
-}
 
-.barradebusqueda input[type="text"],
-.barradebusqueda select {
+
+.barradebusqueda input[type="text"] {
     border: none;
-    border-radius: 25dvh;
-    height: 5dvh;
-    color: gray;
-    width: 0dvh;
+    height: 4.80dvh;
+    color: #333333;
+    width: 30dvh;
     padding-left: 1dvh;
     transition: width 2s;
-
+    border-radius: 25dvh 0dvh 0dvh 25dvh;
+    padding-left: 2dvh;
+}
+.barradebusqueda p {
+    border: none;
+    height: 4dvh;
+    color: white;
+    border: solid white 0.5dvh;
+    background-color: transparent;
+    width: 13dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2dvh;
+    border-radius: 25dvh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+}
+.barradebusqueda div{
+    border-radius: 25dvh;
+    background-color: white;
+    margin-right: 2dvh;
+}
+.barradebusqueda p input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    
 }
 
-
-
-.barradebusqueda.activo input[type="text"],
-.barradebusqueda.activo select {
-    width: 30dvh;
+.barradebusqueda select {
+    border: none;
+    height: 4.90dvh;
+    color: white;
+    border: solid white 0.5dvh;
+    background-color: transparent;
+    width: 25dvh;
+    margin-right: 2dvh;
+    padding-left: 1dvh;
+    border-radius: 25dvh;
+    padding-left: 2dvh;
+    text-align: center;
 }
+
 
 .universidad input,
 .universidad select {
     border: none;
     border-radius: 1.5dvh;
     height: 5dvh;
-    color: gray;
+    color: #333333;
     width: 30dvh;
     padding-left: 1dvh;
 }
@@ -156,12 +194,14 @@ input[type="submit"] {
 .barradebusqueda input[type="submit"],
 .barradebusqueda button {
     border: none;
-    border-radius: 1.5dvh;
+    border-radius: 0dvh 25dvh 25dvh 0dvh;
     height: 5dvh;
-    background-color: #e81f76;
+    width: 5dvh;
+    background-color: white;
     color: white;
-    padding-left: 2dvh;
-    padding-right: 2dvh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3dvh;
 }
 
 /*ESTILOS DE LA BARRA DE NAVEGACION*/
@@ -169,7 +209,8 @@ input[type="submit"] {
 
     grid-area: HEA;
     position: sticky;
-    top: 0;
+    top: -1px;
+    height: 7.1dvh;
     background-color: #333333;
 
     z-index: 1000;
@@ -180,7 +221,7 @@ input[type="submit"] {
         "LOG . BTN"
     ;
     grid-template-rows: auto;
-    grid-template-columns: 40dvh auto 15dvh;
+    grid-template-columns: 8dvh auto 15dvh;
     padding-right: 1dvh;
 }
 
@@ -214,10 +255,10 @@ input[type="submit"] {
 
 .logo_pba_horizontal {
     grid-area: LOG;
-    background-image: url(https://abc.gob.ar/core/themes/abc/logo-pba.svg);
+    background-image: url(../imagenes/SVG/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
 }
 
 /*ESTILOS DEL CARRUCEL DE IMAGENES INICIAL*/
@@ -230,9 +271,21 @@ input[type="submit"] {
     overflow: hidden;
     display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
     background-color: black;
 }
-
+.imagenes{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+}
 .circulos {
     align-items: center;
     grid-area: CIR;
@@ -254,14 +307,18 @@ input[type="submit"] {
 .imagen {
     position: absolute;
     width: 100%;
-    height: max-content;
+    height:100%;
     top: 0;
     left: 100%;
     transition: left 0.5s ease-in-out;
     background-size: cover;
     background-position: center;
     opacity: 0;
-
+    object-fit: cover;
+}
+.imagen source{
+    width: 100%;
+height: max-content;
 }
 
 .imagen.activo {
@@ -278,8 +335,24 @@ input[type="submit"] {
     background-color: #00adc1;
     /* Color del circulo activo */
 }
-
+.textura{
+    background-image: url(../imagenes/SVG/textura.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    pointer-events: none;
+    z-index: 20000;
+}
 .texto1 {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2dvh;
     font-size: 4dvh;
     padding: 0.2dvh 1dvh;
     text-align: center;
@@ -297,7 +370,7 @@ input[type="submit"] {
     position: absolute;
     left: 0;
     top: 0;
-    background:radial-gradient(ellipse 80% 80% at 50% 20%, transparent, #333333 95%);
+    background:radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
     display: grid;
     grid-template-areas:
         ". . ."
@@ -340,7 +413,7 @@ input[type="submit"] {
         "UNI UNI UNI"
         "VOL VOL VOL"
         ". . .";
-    grid-template-rows: 10dvh auto 10dvh;
+    grid-template-rows: max-content auto 10dvh;
     grid-template-columns: auto auto auto;
 }
 
