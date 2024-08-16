@@ -3,3 +3,7 @@
 function redirigir(href){
     document.getElementById(href).scrollIntoView({ behavior: 'smooth' });
 }
+
+document.getElementById("tipo").addEventListener("change", function() {
+    document.getElementById('barra').submit();
+});

@@ -9,12 +9,11 @@
     <meta name="description" content="Podium">
 </head>
 <body>
+<?php
+    include "./codigophp/buscar.php";
+?>
 <div id="textura"></div>
-
-    
-    
-       
-    <div class="container" >
+<div class="container" >
     <div id="barralateral" class="barralateral">
         <a class="botonsalir" onclick="closeMenu()">&times;</a>
         <div class="contenidobarra">
@@ -63,26 +62,30 @@
         
         <main class="main">
 
-
-
-
-
             <div class="identificador" id="identificador1" style="top: 80dvh;"></div>
            
             <form class="barradebusqueda activo" id="barra" method="GET" action="./index.php#identificador2">
                 <div>
-                    <input type="hidden" name="tipo" value="nombre" required><input type="text" name="busqueda" placeholder="¿Que producto busca?" required>
+                    <input type="text" name="busqueda" placeholder="¿Que producto busca?" required>
                     <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
                 </div>
-                <select name="busqueda" id="" required>
+                
+                <select name="tipo" id="tipo">
                     <option value="">Elija una categoria</option>
+                    <?php
+                    crearcategorias();
+                    ?>
                 </select>
+              
                 <a >Menor precio</a>
 
             </form>
            
             <div class="universidades" id="uni" style="padding-top:0vh; position:relative;">
-                <div style="height:60vh;"></div>
+                <?php
+                    etiqueta();
+                    buscar();
+                ?>
             <div class="identificador" id="identificador2" style="top: -20dvh;"></div>
 
                

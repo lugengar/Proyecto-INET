@@ -35,13 +35,17 @@ a {
 }
 
 input,
-select,
-option {
+select{
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
+option {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+}
 input[type="submit"] {
     font-family: "Russo One", sans-serif;
     font-weight: 400;
