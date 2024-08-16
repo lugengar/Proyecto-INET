@@ -1,3 +1,13 @@
+<?php
+    include "codigophp/conexionbs.php";
+    $id_producto = $_GET['producto'];
+    $query = $conn->prepare("SELECT p.nombre_producto, p.precio, p.descripcion, p.cantidad_disponible, m.nombre_marca, c.icon FROM producto p INNER JOIN marca m ON p.fk_marca = m.id_marca INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.id_producto = $id_producto");
+    $query->execute();
+    $query->store_result();
+    $query->bind_result($nombre_producto, $precio, $descripcion, $stock, $nombre_marca, $icon);
+    while($query->fetch()){
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,27 +16,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imagenes/SVG/icono.svg" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="estiloscss/producto-data.css">
-    <title>Pelota de futbol | Podium</title>
+    <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
 <body>
     <div id="textura"><img src="imagenes/textura.png" alt=""></div>
     <div class="cont-producto">
         <div class="icon-producto">
-            <ion-icon name="football-sharp"></ion-icon>
+            <?php echo $icon; ?>
         </div>
-        <h2 class="nombre-producto">Pelota de futbol</h2>
-        <p class="cant-producto">Cantidad disponible: 102</p>
-        <p class="precio-producto">$20000</p>
+        <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
+        <p class="cant-producto">Cantidad disponible: <?php echo $nombre_producto; ?></p>
+        <p class="precio-producto">$<?php echo $precio; ?></p>
         <a href="#" class="boton-producto">Añadir al carrito</a>
         <div class="marca-producto">
             <p class="bold">Marca:</p>
-            <p>Cobra</p>
+            <p><?php echo $nombre_marca; ?></p>
         </div>
         <div class="descrip-producto">
             <p class="bold">Descripción</p>
-            <p>Pelota de básquetbol oficial, tamaño 7, material de cuero sintético, color naranja y negro, peso 567 gramos, circunferencia 75 cm, textura suave, diseño de paneles hexagonales, tecnología de absorción de impacto, rebote uniforme y duradero, adecuada para juego indoor y outdoor</p>
+            <p><?php echo $descripcion; ?></p>
         </div>
     </div>
+    <?php }?>
 
 
     <script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
