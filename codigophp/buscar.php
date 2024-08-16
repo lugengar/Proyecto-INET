@@ -7,7 +7,9 @@ include "./codigophp/construccion.php";
 function etiqueta(){
     if (isset($_GET['busqueda']) || isset($_GET['tipo'])) {
         $busqueda = $_GET['busqueda'];
-        echo '<div class="etiquetas"><a href="index.php#identificador2" id="etiqueta" class="etiqueta">Eliminar busqueda: '.$busqueda.'</a></div> <div class="barraseparadora" ></div>';
+        echo '<div class="etiquetas"><a href="index.php#identificador2" id="etiqueta" class="etiqueta">Eliminar filtros</a></div> <div class="barraseparadora" ></div>';
+    }else{
+        echo '<div class="barraseparadora" ></div>';
     }
 }
 function crearcategorias(){

@@ -81,7 +81,7 @@
 
             </form>
            
-            <div class="universidades" id="uni" style="padding-top:0vh; position:relative;">
+            <div class="productos" id="uni" style=" position:relative;">
                 <?php
                     etiqueta();
                     buscar();

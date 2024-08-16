@@ -553,7 +553,9 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 /*ESTILOS DE LAS UNIVERSIDADES*/
-.universidades {
+.productos {
+    padding-top: 5dvh;
+    padding-bottom: 5dvh;
     background-color: white;
     grid-area: UNI;
     display: flex;
@@ -882,11 +884,11 @@ body.inactive .overlay {
     align-items: center;
 }
 .barraseparadora{
-    border-top: #FCBF49 solid 0.25dvh;
+    border-top: #FCBF49 solid 0.5dvh;
     height: 0.01dvh;
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .etiqueta{
