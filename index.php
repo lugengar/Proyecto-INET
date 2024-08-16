@@ -16,16 +16,16 @@
     <div class="container" >
         <main class="carrusel ">
             <div class="imagenes">
-            <video autoplay muted class="imagen activo" id="videoPlayer">
-                <source src="videos/futbol.mp4" type="video/mp4" id="videoSource">
+            <video autoplay muted class="imagen activo" id="videoPlayer1">
             </video>
-
+            <video autoplay muted class="imagen activo" id="videoPlayer2">
+            </video>
                 <div class="imagen" style="background-image: url('imagenes/otros/gente.jpg');"></div>
                 <div class="imagen" style="background-image: url('imagenes/otros/graduados.jpg');"></div>
                
             </div>
             <div class="filtro" >
-            <a class="texto1">Ver productos relacionados con fútbol</a>
+            <a onclick="redirigir('identificador1')"  class="texto1" id="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
                     <button onclick="changeVideo(0)" class="circulo activo" style="background-image: url('imagenes/SVG/futbol.svg');"></button>
                     <button onclick="changeVideo(1)" class="circulo" style="background-image: url('imagenes/SVG/basket.svg');"></button>

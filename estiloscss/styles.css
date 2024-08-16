@@ -287,8 +287,13 @@ input[type="submit"] {
     grid-area: CIR;
     display: flex;
     justify-content: center;
+   
     gap: 2dvh;
     z-index: 1;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Controla la duración del desvanecimiento */
 }
 
 .circulo {
@@ -300,6 +305,8 @@ input[type="submit"] {
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
 .imagen {
@@ -964,10 +971,7 @@ body.inactive .overlay {
         box-shadow: 0 0.5dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
     }
 
-    .circulo {
-        width: 2dvh;
-        height: 2dvh;
-    }
+
 .botones{
     gap: 0px;
    
