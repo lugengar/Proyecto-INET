@@ -5,12 +5,13 @@
 $direccionimagen = "./imagenes/otros/";
 
 
-function producto($id,$nombre ,$precio, $imagen){ //CREA EL CUADRO DE UNIVERSIDAD
+function producto($id, $icon, $nombre, $precio, $imagen){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
     echo '<div class="universidad">';
     echo('
+        <div class="icon">'.$icon.'</div>
         <h1 class="nombreuni">'.$nombre.'</h1>
-        <p class="descripcionuni">'.$precio.'</p>
+        <p class="descripcionuni">$'.$precio.'</p>
         <a href="./universidad.php?universidad='.$id.'"  class="botonuni">SABER MAS..</a>
     </div>
     ');
