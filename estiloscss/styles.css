@@ -97,7 +97,6 @@ input[type="submit"] {
     align-items: center;
     flex-wrap: wrap;
     background-color: #333333;
-
 }
 
 
@@ -202,26 +201,124 @@ input[type="submit"] {
 
 /*ESTILOS DE LA BARRA DE NAVEGACION*/
 .header {
-    opacity: 0%;
-    grid-area: HEA;
-    position: sticky;
-    top: -1px;
-    height: 7.1dvh;
-    background-color: #333333;
-
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 6.1dvh;
+    background-color: transparent;
     z-index: 1000;
     padding: 0.5dvh;
-    box-shadow: 0 1dvh 2dvh rgba(0, 0, 0, 0.2);
     display: grid;
     grid-template-areas:
         "LOG . BTN"
     ;
     grid-template-rows: auto;
-    grid-template-columns: 8dvh auto 15dvh;
+    grid-template-columns: 8dvh auto 8dvh;
     padding-right: 1dvh;
 }
+.botonsalir{
+    grid-area: BTN1;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 6dvh;
+}
+.contenidobarra{
+    grid-area: CONT;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl; /* Cambiar dirección del contenido */
+   
+}
+.contenidobarra a{
+    width: 100%;
+    height: 20dvh;
+    border-bottom: #00aec3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    
+}
+.barralateral{
+    width: 0dvh;
+    height: 100%;
+    position: fixed;
+    transition: width 0.5s;
+    background-color: #333333;
+    right: 0%;
+    top: 0%;
+    z-index: 1100;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+    ". BTN1"
+    "CONT CONT"
+    ;
+    grid-template-rows: 8dvh auto;
+    grid-template-columns: auto 8dvh;
+   
+    background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat;
+    background-size: 30dvh;
+}
+.barralateral.carro{
+    grid-template-areas:
+    "BTN2 BTN2"
+    "CONT CONT"
+    ". BTN1"
+    ;
+    grid-template-rows: 8dvh auto 8dvh;
+    grid-template-columns: auto 8dvh;
+}
+.pagar{
+    grid-area: BTN2;
+}
+.carrito{
+    position: fixed;
+    right: 5dvh;
+    bottom: 5dvh;
+    width: 8dvh;
+    border: none;
+    height: 8dvh;
+    background-color: #333333;
+    border-radius: 25dvh;
+    background-image: url(../imagenes/SVG/carrito.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5dvh;
+    z-index: 1050;
+}
+.barralateral.abierto{
+    width: 50dvh;
 
-.boton_nose_que_estudiar {
+}
+
+.header.visible {
+    background-color: #333333;
+
+}
+.header.visible .logo{
+    opacity: 100%;
+
+}
+.header.hidden {
+    background-color: transparent;
+}
+.header.hidden .logo{
+    opacity: 0%;
+    pointer-events: none;
+}
+.user {
     display: block;
     grid-area: BTN;
     font-family: "Poppins", sans-serif;
@@ -233,6 +330,13 @@ input[type="submit"] {
     text-align: left;
     padding-top: 0.4dvh;
     position: relative;
+    background-image: url(../imagenes/SVG/persona.svg);
+    background-size: 5dvh;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    margin-right: 2dvh;
+    border: none;
 }
 
 .circulopregunta {
@@ -248,15 +352,29 @@ input[type="submit"] {
     right: 0%;
     top: 0.5dvh;
 }
-
-.logo_pba_horizontal {
+.volverarriba button{
+    background-color: transparent;
+}
+.logo {
+    transition: opacity 0.2s;
     grid-area: LOG;
     background-image: url(../imagenes/SVG/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
+.logocarrusel {
+    width: 10dvh;
+    height: 10dvh;
 
+    background-image: url(../imagenes/SVG/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 5dvh;
+    top: 5dvh;
+}
 /*ESTILOS DEL CARRUCEL DE IMAGENES INICIAL*/
 
 .carrusel {
@@ -337,7 +455,7 @@ height: max-content;
 }
 
 .circulo.activo {
-    background-color: #00adc1;
+    background-color: #75AADB;
 transform: translateY(-1dvh) rotate(25deg);
     /* Color del circulo activo */
 }
@@ -369,6 +487,11 @@ transform: translateY(-1dvh) rotate(25deg);
     display: flex;
     color: white;
     grid-area: TEXT1;
+    background-image: url(../imagenes/SVG/estrellas.svg);
+    background-size: 12dvh;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-bottom: 5dvh;
 }
 
 
@@ -434,6 +557,10 @@ transform: translateY(-1dvh) rotate(25deg);
     align-items: center;
     gap: 5dvh;
     flex-wrap: wrap;
+    background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
+    background-position: left bottom, right top;
+    background-repeat: no-repeat;
+    background-size: 50dvh;
 }
 
 .universidad {
@@ -646,9 +773,8 @@ transform: translateY(-1dvh) rotate(25deg);
 }
 
 .footer .imagenfooter {
-    background-image: url(../imagenes/otros/imagen_footer2.png);
-    background-repeat: repeat-x;
-    background-size: 150dvh;
+    background-repeat:round ;
+    background-size: 20dvh;
     background-position: top;
     height: 40dvh;
     width: 100%;
@@ -659,7 +785,7 @@ transform: translateY(-1dvh) rotate(25deg);
 
 .footer .logo_pba_vertical2 {
     grid-area: LOG;
-    background-image: url(../imagenes/otros/logo-pba-desktop.png);
+    background-image: url(../imagenes/SVG/logo);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -734,36 +860,7 @@ transform: translateY(-1dvh) rotate(25deg);
     transition: opacity 0.05s;
 }
 
-.hidden {
-    opacity: 0%;
-    pointer-events: none;
-}
 
-.visible {
-    opacity: 100%;
-}
-
-[popover] {
-    transition: visibility 1s;
-    border: none;
-    border-radius: 0.5dvh;
-    background-color: white;
-    /*
-    background: linear-gradient(90deg, rgba(232,31,118,1) 0%, rgba(0,174,192,1) 100%);
- */
-}
-
-[popover] h1 {
-    width: 70vw;
-    text-align: center;
-    color: #00adc1;
-    font-weight: 700;
-}
-
-[popover] :nth-child(2) {
-    width: 70vw;
-    height: 86dvh;
-}
 
 body.inactive * {
     pointer-events: none;
@@ -781,26 +878,16 @@ body.inactive .overlay {
     align-items: center;
 }
 .barraseparadora{
-    border-top: #00adc1 solid 0.25dvh;
+    border-top: #FCBF49 solid 0.25dvh;
     height: 0.01dvh;
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
 }
-.casita_superior {
-    width: 12dvh;
-    height: 12dvh;
-    background-image: url(../imagenes/SVG/logo.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    left: 4dvh;
-    top: 4dvh;
-}
+
 .etiqueta{
     text-decoration: none;
-    background-color: #e81f76;
+    background-color: #75AADB;
     color: white;
     font-size: 2dvh;
     width: max-content;
@@ -818,70 +905,14 @@ body.inactive .overlay {
 }
 
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3000;
-    display: none;
-    backdrop-filter: blur(1dvh);
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url(../imagenes/otros/logo-pba-desktop.png);
-    background-position: left;
-    background-size: 9%;
-    background-repeat: no-repeat;
-}
 
-.pop2 {
-    display: none;
-    z-index: 3100;
-}
-.pop2  :nth-child(1)  {
-    pointer-events: auto;
-}
-.pop2  :nth-child(2)  {
-    pointer-events: auto;
-}
+
 /*ESTILOS PARA LA VERSION DE MOBILES*/
 @media (max-width: 768px) {
     .barradebusqueda{
         padding-top: 2dvh;
     }
 
-    .botones :nth-child(1) :nth-child(2) {
-        color: white;
-        background-color: transparent;
-    }
-
-    .botones :nth-child(2) :nth-child(2) {
-        color: white;
-        background-color: transparent;
-
-    }
-
-    .botones :nth-child(3) :nth-child(2) {
-        color: white;
-        background-color: transparent;
-
-    }
-
-    .botones :nth-child(4) :nth-child(2) {
-        color: white;
-        background-color: transparent;
-
-    }
-    .botones {
-        padding-top: 5dvh;
-        padding-bottom: 5dvh;
-        grid-area: BOT;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8%;
-        flex-wrap: wrap;
-    }
     input[type="submit"]:hover,
     a:hover,
     button:hover {
@@ -889,40 +920,12 @@ body.inactive .overlay {
         transform: scale(1);
     }
 
-    .boton h1 {
-        font-size: 100%;
-    }
 
-    .botones :nth-child(1) {
-        background-color: #e81f76;
-    }
-
-    .botones :nth-child(2) {
-        background-color: #78568e;
-    }
-
-    .botones :nth-child(3) {
-        background-color: #37799f;
-    }
-
-    .botones :nth-child(4) {
-        background-color: #00adc1;
-    }
-
-    .boton .imagenboton {
-        background-color: #00adc1;
+    .barralateral.abierto{
+        transition: none;
         width: 100%;
-        height: 100%;
-        grid-area: BIMG;
-        background-size: 16dvh;
-        border-radius: 50dvh;
-        background-repeat: no-repeat;
-        background-position: center;
-        box-shadow: none;
-
-    }
-
   
+    }
     .filtro {
         width: 100%;
         height: 100%;
@@ -942,61 +945,11 @@ body.inactive .overlay {
         grid-template-columns: 2dvh auto 2dvh;
     }
 
-    .filtro .texto1,
-    .texto2 {
+    .filtro .texto1 {
         font-size: 3dvh;
         text-align: center;
     }
 
-    .logo_pba_vertical {
-        height: 12dvh;
-        width: 100%;
-        background-color: white;
-        background-image: url(../imagenes/otros/logo-pba-mobile.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        bottom: 0dvh;
-        top: 5dvh;
-        left: 0;
-        box-shadow: -2dvh 2dvh 2dvh rgba(0, 0, 0, 0.2);
-    }
-
-    .universidad {
-        width: 100%;
-        height: max-content;
-        background-color: white;
-        border-radius: 0;
-        box-shadow: 0 0.5dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
-    }
-
-
-.botones{
-    gap: 0px;
-   
-}
-    .boton {
-        margin-top: 0dvh;
-        width: 50%;
-        height: 25dvh;
-        border: none;
-        background-color: transparent;
-        border-radius: 0dvh;
-        display: grid;
-        grid-template-areas:
-            ". BIMG ."
-            "TEXTB TEXTB TEXTB";
-        grid-template-rows: 18dvh auto;
-        grid-template-columns: auto 20dvh auto;
-        justify-items: center;
-        /* Centra los elementos horizontalmente */
-        align-items: center;
-    }
-
-    .imagenboton {
-        background-size: 10dvh;
-    }
 
     .footer {
         grid-area: FOO;
@@ -1019,32 +972,11 @@ body.inactive .overlay {
         width: 20dvh;
     }
 
- 
-
-    [popover] :nth-child(2) {
-        width: 80vw;
-        height: 60dvh;
-    }
 
     .footer .imagenfooter {
         animation: footer 180s linear infinite;
     }
 
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 3000;
-        display: none;
-        backdrop-filter: blur(1dvh);
-        background-color: rgba(0, 0, 0, 0.8);
-        background-image: url(../imagenes/otros/logo-pba-mobile.png);
-        background-position: top;
-        background-size: 50dvh;
-        background-repeat: no-repeat;
-    }
 }
 
 /*CONFETTI*/

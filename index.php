@@ -12,8 +12,33 @@
 <div id="textura"></div>
 
     
-        <div class="overlay" id="overlay"></div>
+    
+       
     <div class="container" >
+    <div id="barralateral" class="barralateral">
+        <a class="botonsalir" onclick="closeMenu()">&times;</a>
+        <div class="contenidobarra">
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+        <a href="#">Contacto</a>
+        <a href="#">Contacto</a>
+        <a href="#">Contacto</a>
+        <a href="#">Contacto</a>
+        </div>
+    </div>
+    <form id="barracarrito" class="barralateral carro">
+        <a class="botonsalir" onclick="closeMenu2()">&times;</a>
+        <div class="contenidobarra">
+            <input type="text" value="pelota">
+        </div>
+        <input type="submit" class="pagar" value="pagar">
+    </form>
+    <button class="carrito" onclick="openMenu2()"></button>
+    <header class="header hidden" id="header">
+            <a href="index.php" class="logo"></a>
+            <button class="user" onclick="openMenu()"></button>
+        </header>
         <main class="carrusel ">
             <div class="imagenes">
             <video autoplay muted class="imagen activo" id="videoPlayer1">
@@ -33,11 +58,9 @@
                    
                 </div>
             </div>
-            <a onclick="redirigir('identificador1')" class="casita_superior"></a>
+            <a onclick="redirigir('identificador1')" class="logocarrusel"></a>
         </main>
-        <header class="header" id="header">
-            <a href="index.php" class="logo_pba_horizontal " ></a>
-        </header>
+        
         <main class="main">
 
 
@@ -77,7 +100,7 @@
             </form>
            
             <div class="universidades" id="uni" style="padding-top:0vh; position:relative;">
-                <div style="height:200vh;"></div>
+                <div style="height:60vh;"></div>
             <div class="identificador" id="identificador2" style="top: -20dvh;"></div>
 
                

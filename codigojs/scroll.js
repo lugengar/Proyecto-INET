@@ -14,3 +14,22 @@ window.addEventListener('scroll', function() {
         element.classList.remove('visible');
     }
 });
+
+function openMenu() {
+
+    document.getElementById("barralateral").classList.add('abierto');
+}
+
+function closeMenu() {
+    document.getElementById("barralateral").classList.remove('abierto');
+
+}
+function openMenu2() {
+
+    document.getElementById("barracarrito").classList.add('abierto');
+}
+
+function closeMenu2() {
+    document.getElementById("barracarrito").classList.remove('abierto');
+
+}
