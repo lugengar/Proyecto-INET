@@ -346,7 +346,12 @@ height: max-content;
     left: 0%;
     top: 0%;
     pointer-events: none;
-    z-index: 20000;
+    opacity: 14%;
+    z-index: 2500;
+}
+.barradebusqueda *{
+    z-index: 2501;
+
 }
 .texto1 {
     font-family: "Russo One", sans-serif;
