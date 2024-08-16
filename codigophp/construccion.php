@@ -12,7 +12,7 @@ function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
         <div class="icon">'.$icon.'</div>
         <h1 class="nombreuni">'.$nombre.'</h1>
         <p class="descripcionuni">Precio: $'.$precio.'</p>
-        <a href="./universidad.php?universidad='.$id.'"  class="botonuni"></a>
+        <a href="./producto-data.php?producto='.$id.'"  class="botonuni"></a>
     </div>
     ');
 }

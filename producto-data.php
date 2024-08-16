@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <title>Pelota de futbol | Podium</title>
 </head>
 <body>
+    <div id="textura"><img src="imagenes/textura.png" alt=""></div>
     <div class="cont-producto">
         <div class="icon-producto">
             <ion-icon name="football-sharp"></ion-icon>
