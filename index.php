@@ -9,12 +9,12 @@
     <meta name="description" content="Ofertas de Educación Superior Región 6">
 </head>
 <body>
-<div class="textura"></div>
+<div id="textura"></div>
 
     
         <div class="overlay" id="overlay"></div>
-    <div class="container">
-        <main class="carrusel">
+    <div class="container" >
+        <main class="carrusel ">
             <div class="imagenes">
             <video autoplay muted class="imagen activo">
                 <source src="videos/futbol3.mp4" type="video/mp4">
@@ -24,7 +24,7 @@
                 <div class="imagen" style="background-image: url('imagenes/otros/graduados.jpg');"></div>
                
             </div>
-            <div class="filtro">
+            <div class="filtro" >
             <a class="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
                     <span class="circulo activo"></span>
@@ -57,59 +57,34 @@
             </div>
 
 
-            <div class="identificador" id="identificador1" style="top: 100dvh;"></div>
+            <div class="identificador" id="identificador1" style="top: 80dvh;"></div>
            
             <form class="barradebusqueda activo" id="nombre" method="GET" action="./index.php#identificador2">
             
             
                 
                 <div>
-                    <input type="hidden" name="tipo" value="nombre" required><input type="text" name="busqueda" placeholder="Nombre del establecimiento" required>
+                    <input type="hidden" name="tipo" value="nombre" required><input type="text" name="busqueda" placeholder="¿Que producto busca?" required>
                     <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
                 </div>
                 <select name="busqueda" id="" required>
-                <option value="">Elija una carrera</option>
+                <option value="">Elija una categoria</option>
                 
             </select>
-                <p>Mejor precio<input type="checkbox" name="" id="" value=""></p>
+                <p >Menor precio<input type="checkbox" name="" id="" value=""></p>
                 <p>Sin filtro<input type="checkbox" name="" id="" value=""></p>
 
             </form>
-            <form class="barradebusqueda" id="distrito" method="GET" action="./index.php#identificador2">
-            <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
-                <select name="busqueda"id="" required>
-                    <option value="">Elija un distrito</option >
-                    
-                </select>
-                <input type="hidden" name="tipo" value="distrito" required>
-                <input type="submit" name="" value="Buscar" >
-            </form>
-            <form class="barradebusqueda" id="carrera" method="GET" action="./index.php#identificador2">
-            <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
-                <select name="busqueda" id="" required>
-                    <option value="">Elija una carrera</option>
-                   
-                </select>
-                <input type="hidden" name="tipo" value="carrera" required>
-                <input type="submit" name="" value="Buscar">
-            </form>
-            <form class="barradebusqueda" id="tecnicatura" method="GET" action="./index.php#identificador2">
-            <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
-                <select name="busqueda" id="" required>
-                    <option value="">Elija una tecnicatura</option>
-                  
-                </select>
-                <input type="hidden" name="tipo" value="tecnicatura" required>
-                <input type="submit" name="" value="Buscar">
-            </form>
+           
             <div class="universidades" id="uni" style="padding-top:0vh; position:relative;">
+                <div style="height:200vh;"></div>
             <div class="identificador" id="identificador2" style="top: -20dvh;"></div>
 
                
             </div>
             <div class="barradebusqueda volverarriba">
                 <img src="imagenes/iconos/flecha.svg" alt="">
-                <button onclick="redirigir('botones')" >Volver arriba</button>
+                <button onclick="redirigir('identificador1')" >Volver arriba</button>
             </div>
         </main>
 
