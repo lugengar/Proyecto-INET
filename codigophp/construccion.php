@@ -5,7 +5,7 @@
 $direccionimagen = "./imagenes/otros/";
 
 
-function producto($id, $icon, $nombre, $precio, $imagen){ //CREA EL CUADRO DE UNIVERSIDAD
+function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
     echo '<div class="universidad">';
     echo('

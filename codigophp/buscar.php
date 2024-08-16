@@ -42,7 +42,26 @@ function precio(){
     echo '<a href="'.$nueva_url.'#identificador2">Menor precio</a>';
 
 }
+function carruselboton() {
+    $url_actual = $_SERVER['REQUEST_URI'];
 
+    $parsed_url = parse_url($url_actual);
+
+    $query = isset($parsed_url['query']) ? $parsed_url['query'] : '';
+
+    parse_str($query, $params);
+
+    $params['tipo'] = 1;
+
+    $nuevo_query_string = http_build_query($params);
+
+    $nueva_url = $parsed_url['path'] . '?' . $nuevo_query_string;
+
+    if (isset($parsed_url['fragment'])) {
+        $nueva_url .= '#' . $parsed_url['fragment'];
+    }
+    echo '<a href="'.$nueva_url.'#identificador2"class="texto1" id="texto1">Ver productos relacionados con fútbol</a>';
+}
 function buscar(){ //BUSCA EN GENERAL POR LOS 4 MEDIOS DISTRITO, TECNICO,LICENCIATURA O NOMBRE
     global $conn;
     global $stmt;
@@ -60,6 +79,7 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
         $stmt->execute();
 
         $result = $stmt->get_result();
+
     }else if ($categoria != null){
         $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.fk_categoria = ?");
         $stmt->bind_param("s", $categoria);
@@ -88,7 +108,7 @@ if ($result != null){
     echo "<p class= 'error' >No se encontraron resultados para la búsqueda: " . htmlspecialchars($busqueda)."</p>";
 }else{
     while ($row = $result->fetch_assoc()) {
-        producto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"], null);
+        producto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"]);
     }
    /*
     while ($row = $result->fetch_assoc()) {
