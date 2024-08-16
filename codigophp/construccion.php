@@ -11,9 +11,19 @@ function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     echo('
         <div class="icon">'.$icon.'</div>
         <h1 class="nombreuni">'.$nombre.'</h1>
-        <p class="descripcionuni">$'.$precio.'</p>
-        <a href="./universidad.php?universidad='.$id.'"  class="botonuni">SABER MAS..</a>
+        <p class="descripcionuni">Precio: $'.$precio.'</p>
+        <a href="./universidad.php?universidad='.$id.'"  class="botonuni"></a>
     </div>
+    ');
+}
+function carritoproducto($id, $icon, $nombre, $precio,$cantidad){ //CREA EL CUADRO DE UNIVERSIDAD
+    global $direccionimagen;
+    echo('<div class="productocarrito">
+            <h1 class="nombre">'.$nombre.' x'.$cantidad.'</h1>
+            <p class="precio">Precio: $'.($precio * $cantidad).'</p>
+            <button href="./universidad.php?universidad='.$id.'"class="botonborrar">aaaaaaaaaaaaaaaaaaaaaaa</button>
+            <div class="icono">'.$icon.'</div>
+        </div>
     ');
 }
 function crearmapa($ubicacion){ //CREA EL MAPA CON LA UBICACION A TRAVEZ DE UNA URL MODIFICADA

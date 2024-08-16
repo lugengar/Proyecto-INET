@@ -11,6 +11,7 @@
 <body>
 <?php
     include "./codigophp/buscar.php";
+
 ?>
 <div id="textura"></div>
 <div class="container" >
@@ -29,7 +30,15 @@
     <form id="barracarrito" class="barralateral carro">
         <a class="botonsalir" onclick="closeMenu2()">&times;</a>
         <div class="contenidobarra">
-            <input type="text" value="pelota">
+            <?php
+            productosdelcarrito();
+            ?>
+            <div class="productocarrito">
+                <h1></h1>
+                <input type="hidden" value="" name="producto">
+                <input type="hidden" value="" name="cantidad">
+                <input type="hidden" value="" name="precio">
+            </div>
         </div>
         <input type="submit" class="pagar" value="pagar">
     </form>
