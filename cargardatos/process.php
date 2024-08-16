@@ -43,13 +43,13 @@
 
     } elseif ($tabla === "contacto") {
         $descripcion = $_POST['descripcion'];
-        $tipo = $_POST['tipo'];
+        $categoria = $_POST['tipo'];
         $contacto = $_POST['contacto'];
         $fk_establecimiento = $_POST['fk_establecimiento'];
 
         if (!checkDuplicate($conn, 'contacto', 'fk_establecimiento', $fk_establecimiento)) {
             $stmt = $conn->prepare("INSERT INTO contacto (descripcion, tipo, contacto, fk_establecimiento) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("sssi", $descripcion, $tipo, $contacto, $fk_establecimiento);
+            $stmt->bind_param("sssi", $descripcion, $categoria, $contacto, $fk_establecimiento);
         } else {
             echo "Entrada duplicada para contacto con fk_establecimiento: $fk_establecimiento";
             $executeStmt = false;
@@ -70,13 +70,13 @@
         $nombre = $_POST['nombre'];
         $ubicacion = $_POST['ubicacion'];
         $descripcion = $_POST['descripcion'];
-        $tipo_establecimiento = $_POST['tipo_establecimiento'];
+        $categoria_establecimiento = $_POST['tipo_establecimiento'];
         $servicios = $_POST['servicios'];
         $fk_distrito = $_POST['fk_distrito'];
 
         if (!checkDuplicate($conn, 'establecimiento', 'nombre', $nombre)) {
             $stmt = $conn->prepare("INSERT INTO establecimiento (nombre, ubicacion, descripcion, tipo_establecimiento, servicios, fk_distrito) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssi", $nombre, $ubicacion, $descripcion, $tipo_establecimiento, $servicios, $fk_distrito);
+            $stmt->bind_param("sssssi", $nombre, $ubicacion, $descripcion, $categoria_establecimiento, $servicios, $fk_distrito);
         } else {
             echo "Entrada duplicada para establecimiento: $nombre";
             $executeStmt = false;

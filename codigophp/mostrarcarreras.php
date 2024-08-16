@@ -23,11 +23,11 @@ if (isset($_GET['busqueda']) && isset($_GET['tipo']) && $carreras != null) {
 
     $busqueda = $_GET['busqueda'];
     
-    $tipo = $_GET['tipo'];
+    $categoria = $_GET['tipo'];
     $tec = "Técnico";
     // Preparar la consulta usando una consulta preparada
   
-    if($tipo == "nombre"){    
+    if($categoria == "nombre"){    
         $stmt =  $conn->prepare("SELECT * FROM carrera WHERE nombre LIKE ? AND id_carrera IN (".implode(", ", $carreras).")");
 
         $param = "%$busqueda%";
@@ -38,7 +38,7 @@ if (isset($_GET['busqueda']) && isset($_GET['tipo']) && $carreras != null) {
 
         // Obtener resultados
         $result = $stmt->get_result();
-    }else if($tipo == "carrera"){ 
+    }else if($categoria == "carrera"){ 
         $stmt =  $conn->prepare("SELECT * FROM carrera WHERE nombre LIKE ? AND titulo NOT LIKE ? AND id_carrera IN (".implode(", ", $carreras).")");
         $param = "%$busqueda%";
         $param2 = "%$tec%";
@@ -49,7 +49,7 @@ if (isset($_GET['busqueda']) && isset($_GET['tipo']) && $carreras != null) {
 
         // Obtener resultados
         $result = $stmt->get_result();
-    }else if($tipo == "tecnicatura"){ 
+    }else if($categoria == "tecnicatura"){ 
         $stmt =  $conn->prepare("SELECT * FROM carrera WHERE nombre LIKE ? AND titulo LIKE ? AND id_carrera IN (".implode(", ", $carreras).")");
         $param = "%$busqueda%";
         $param2 = "%$tec%";

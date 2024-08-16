@@ -70,14 +70,15 @@
                     <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
                 </div>
                 
-                <select name="tipo" id="tipo">
+                <select name="categoria" id="tipo" value="">
                     <option value="">Elija una categoria</option>
                     <?php
                     crearcategorias();
                     ?>
                 </select>
-              
-                <a >Menor precio</a>
+              <?php
+                precio();
+              ?>
 
             </form>
            
