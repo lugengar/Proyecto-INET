@@ -89,36 +89,32 @@ input[type="submit"] {
     position: sticky;
     z-index: 1000;
     top: 7dvh;
-    opacity: 0;
     grid-area: BAR;
     display: flex;
-    pointer-events: none;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     background-color: #333333;
+    padding-bottom: 2dvh;
 }
 
 
 
-.barradebusqueda.activo {
-    pointer-events: all;
-    opacity: 1;
-}
+
 
 .volverarriba {
     opacity: 1;
     pointer-events: all;
     grid-area: VOL;
-    z-index: 2300;
+    z-index: 1040;
     top: 7dvh;
+padding-bottom: 0%;
+
 }
 
 .barradebusqueda img {
     height: 5dvh;
 }
-
-
 
 .barradebusqueda input[type="text"] {
     border: none;
@@ -128,7 +124,7 @@ input[type="submit"] {
     border-radius: 25dvh;
     padding-left: 2dvh;
 }
-.barradebusqueda p {
+.barradebusqueda a {
     font-size: 1.8dvh;
     border: none;
     height: 4dvh;
@@ -248,6 +244,9 @@ input[type="submit"] {
     text-decoration: none;
     
 }
+
+
+
 .barralateral{
     width: 0dvh;
     height: 100%;
@@ -262,8 +261,9 @@ input[type="submit"] {
     grid-template-areas:
     ". BTN1"
     "CONT CONT"
+    ". ."
     ;
-    grid-template-rows: 8dvh auto;
+    grid-template-rows: 8dvh auto 4dvh;
     grid-template-columns: auto 8dvh;
    
     background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
@@ -932,17 +932,17 @@ body.inactive .overlay {
         position: absolute;
         left: 0;
         top: 0;
-        background: linear-gradient(to top, black, transparent);
+        background:radial-gradient(ellipse 150dvh 75dvh at 50% 20%, transparent, #333333 98%);
         display: grid;
         grid-template-areas:
             ". . ."
-            ". TEXT1 ."
-            ". TEXT2 ."
+            "TEXT1 TEXT1 TEXT1"
+            ". . ."
             "CIR CIR CIR"
         ;
         gap: 1dvh;
-        grid-template-rows: 1fr max-content max-content 20dvh;
-        grid-template-columns: 2dvh auto 2dvh;
+        grid-template-rows: 1fr max-content 1fr 10dvh;
+        grid-template-columns: 2dvh 1fr 2dvh;
     }
 
     .filtro .texto1 {

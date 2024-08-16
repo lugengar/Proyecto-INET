@@ -65,37 +65,19 @@
 
 
 
-            <!-- MAPA -->
-            <div popover class="pop2">
-                <h1>HAGA CLIC FUERA DEL CUADRO PARA SALIR</h1>
-                <!-- ACA VA EL DIV O LO Q SEA DEL MAPA. EL TAMAÑO SE AJUSTA AUTOMATICAMENTE-->
-                <div id="mapa">
-                    <p>Hola</p>
-                    <img id="imagenmapa" src="./imagenes/otros/mapa2.svg" alt="">
-                    <img class="puntero" src="./imagenes/otros/puntero.svg" alt="">
-                    <style>
-                        /*POR SI QUERES AGREGAR ESTILOS DESDE ACÁ*/
-                    </style>
-                </div>
-            </div>
 
 
             <div class="identificador" id="identificador1" style="top: 80dvh;"></div>
            
-            <form class="barradebusqueda activo" id="nombre" method="GET" action="./index.php#identificador2">
-            
-            
-                
+            <form class="barradebusqueda activo" id="barra" method="GET" action="./index.php#identificador2">
                 <div>
                     <input type="hidden" name="tipo" value="nombre" required><input type="text" name="busqueda" placeholder="¿Que producto busca?" required>
                     <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
                 </div>
                 <select name="busqueda" id="" required>
-                <option value="">Elija una categoria</option>
-                
-            </select>
-                <p >Menor precio<input type="checkbox" name="" id="" value=""></p>
-                <p>Sin filtro<input type="checkbox" name="" id="" value=""></p>
+                    <option value="">Elija una categoria</option>
+                </select>
+                <a >Menor precio</a>
 
             </form>
            

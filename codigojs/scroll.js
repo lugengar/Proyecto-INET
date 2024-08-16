@@ -1,11 +1,11 @@
 //ES UNA ANIMACION PARA APARECER Y DES APARECER LA BARRA SUPERIOR
+const element = document.getElementById('header');
 window.addEventListener('scroll', function() {
-    var element = document.getElementById('header');
+    
     var scrollPosition = window.scrollY || window.pageYOffset;
 
     // Define el punto en el que quieres que aparezca el elemento
     var triggerPoint = 700; // Cambia esto al valor deseado en píxeles
-
     if (scrollPosition >= triggerPoint) {
         element.classList.add('visible');
         element.classList.remove('hidden');
