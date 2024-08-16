@@ -11,9 +11,7 @@
 <body>
 <div class="textura"></div>
 
-    <?php
-        include "./codigophp/buscar_universidades.php";
-    ?>
+    
         <div class="overlay" id="overlay"></div>
     <div class="container">
         <main class="carrusel">
@@ -81,10 +79,7 @@
             <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
                 <select name="busqueda"id="" required>
                     <option value="">Elija un distrito</option >
-                    <?php
-                    //ESCRIBE LAS OPCIONES PARA LA BARRA DE BUSQUEDA
-                        buscardistritos();
-                    ?>
+                    
                 </select>
                 <input type="hidden" name="tipo" value="distrito" required>
                 <input type="submit" name="" value="Buscar" >
@@ -93,10 +88,7 @@
             <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
                 <select name="busqueda" id="" required>
                     <option value="">Elija una carrera</option>
-                    <?php
-                    //ESCRIBE LAS OPCIONES PARA LA BARRA DE BUSQUEDA
-                        buscarcarrera();
-                    ?>
+                   
                 </select>
                 <input type="hidden" name="tipo" value="carrera" required>
                 <input type="submit" name="" value="Buscar">
@@ -105,10 +97,7 @@
             <img src="imagenes/iconos/lupa.svg" class="imglupa" alt="">
                 <select name="busqueda" id="" required>
                     <option value="">Elija una tecnicatura</option>
-                    <?php
-                    //ESCRIBE LAS OPCIONES PARA LA BARRA DE BUSQUEDA
-                        buscartecnicatura();
-                    ?>
+                  
                 </select>
                 <input type="hidden" name="tipo" value="tecnicatura" required>
                 <input type="submit" name="" value="Buscar">
@@ -116,11 +105,7 @@
             <div class="universidades" id="uni" style="padding-top:0vh; position:relative;">
             <div class="identificador" id="identificador2" style="top: -20dvh;"></div>
 
-                <?php
-                    etiqueta();
-                    //MUESTRA TODAS LAS UNIVERSIDADES O LOS RESULTADOS DE LAS BUSQUEDAS
-                    buscar();
-               ?>
+               
             </div>
             <div class="barradebusqueda volverarriba">
                 <img src="imagenes/iconos/flecha.svg" alt="">
