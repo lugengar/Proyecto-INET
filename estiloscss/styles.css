@@ -251,6 +251,7 @@ input[type="submit"] {
 
 
 .barralateral {
+    
     width: 0dvh;
     height: 100%;
     position: fixed;
@@ -286,9 +287,16 @@ input[type="submit"] {
 }
 
 .pagar {
+    background-color: #37799f;
+    border-radius: 25dvh;
+    margin: 1dvh;
     grid-area: BTN2;
+    color: white;
+    border: none;
+    font-size: 2dvh;
+    margin-left: 4dvh;
+    margin-right: 4dvh;
 }
-
 .carrito {
     position: fixed;
     right: 5dvh;
@@ -307,6 +315,7 @@ input[type="submit"] {
 
 .barralateral.abierto {
     width: 50dvh;
+    border-left: #333333 1dvh solid;
 
 }
 
@@ -612,12 +621,11 @@ input[type="submit"] {
     background-color: white;
     display: grid;
     grid-template:
-    "NOM ICO"
-    "NOM ICO"
-    "BTN PREC";
+    "NOM NOM ICO"
+    "NOM NOM ICO"
+    "BTN PREC PREC";
     padding: 2dvh;
-    gap: 2dvh;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 10dvh auto auto;
     grid-template-columns: auto auto ;
 }
 .productocarrito .nombre{
@@ -629,11 +637,17 @@ input[type="submit"] {
     grid-area: BTN;
     font-size: 2dvh;
     color: #333333;
+    border: none;
+    border-radius: 25dvh;
+    background-color: #75AADB;
+    color: white;
+    margin: 2dvh;
 }
 .productocarrito .precio{
     grid-area: PREC;
     font-size: 2dvh;
     color: #333333;
+    text-align: end;
 }
 .productocarrito .icono{
     grid-area: ICO;
@@ -643,7 +657,7 @@ input[type="submit"] {
     align-items: center;
     color: #333333;
 }
-.productocarrito .icono ion-icon {
+.productocarrito .icono ion-icon,.productocarrito .icono i {
     font-size: 8dvh;
 }
 .universidad .botonuni {
@@ -1004,6 +1018,7 @@ body.inactive .overlay {
     .barralateral.abierto {
         transition: none;
         width: 100%;
+        border-left: #333333 1dvh solid;
 
     }
 
