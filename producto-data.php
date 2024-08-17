@@ -19,6 +19,8 @@
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
 <body>
+    <main>
+
     <div id="textura"><img src="imagenes/textura.png" alt=""></div>
     <div class="cont-producto">
         <div class="icon-producto">
@@ -38,7 +40,8 @@
         </div>
     </div>
     <?php }?>
-
+    </main>
+    <?php include "footer.html"?>
 
     <script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>    

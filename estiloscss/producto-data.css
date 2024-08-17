@@ -5,6 +5,14 @@
     font-family: arial;
 }
 
+main {
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #textura {
     position: fixed;
     top: 0;
@@ -32,8 +40,6 @@
     padding: 20px;
     border: 3px outset #ffff00;
     border-radius: 15px;
-
-    margin: 100px auto;
 
     display: grid;
     grid-template-columns: 50% 1fr 1fr;
