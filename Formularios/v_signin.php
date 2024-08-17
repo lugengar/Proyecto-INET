@@ -44,8 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['jerarquia'] = $jerarquia;
             $_SESSION['nombre'] = $nombre;
             $_SESSION['id_usuario'] = $id_usuario;
-            $_SESSION['pedido'] = ["productos" => [1, 2, 3, 4], "cantidad" => [1, 2, 3, 4]];
-            $_SESSION['pedido']["productos"];
+            $_SESSION['pedido'] = ["productosxunidad" => [1, 2, 3, 4]];
             header("location: ../index.php");
         } else {
             echo "<p class='error_contra'>Contraseña incorrecta. Por favor, inténtelo de nuevo.</p>";

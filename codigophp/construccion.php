@@ -16,12 +16,12 @@ function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     </div>
     ');
 }
-function carritoproducto($id, $icon, $nombre, $precio,$cantidad){ //CREA EL CUADRO DE UNIVERSIDAD
+function carritoproducto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
     echo('<div class="productocarrito">
-            <h1 class="nombre">'.$nombre.' x'.$cantidad.'</h1>
-            <p class="precio">Precio: $'.($precio * $cantidad).'</p>
-            <button href="./universidad.php?universidad='.$id.'"class="botonborrar">aaaaaaaaaaaaaaaaaaaaaaa</button>
+            <h1 class="nombre">'.$nombre.'</h1>
+            <p class="precio">Precio: $'.$precio.'</p>
+            <button href="./universidad.php?universidad='.$id.'"class="botonborrar">Eliminar &times;</button>
             <div class="icono">'.$icon.'</div>
         </div>
     ');
