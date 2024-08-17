@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+#textura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: .1;
+}
+
+#textura img {
+    width: 100%;
+    height: 100%;
+    transform: scale(110%);
+}
+
+.cont-producto {
+    background-color: #fff;
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    padding: 20px;
+    border: 3px outset #ffff00;
+    border-radius: 15px;
+
+    margin: 100px auto;
+
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr;
+    grid-template-rows: auto 2dvh 4dvh auto auto;
+    grid-template-areas:
+        "icon nombre nombre"
+        "icon cant cant"
+        "icon precion boton"
+        "marca marca marca"
+        "descrip descrip descrip";
+    gap: 20px;
+}
+
+.icon-producto {
+    grid-area: "icon";
+    grid-row: 1 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25dvh;
+}
+
+.nombre-producto {
+    grid-area: "nombre";
+    grid-column: 2 / 4;
+
+    padding-top: 10px;
+}
+
+.cant-producto {
+    grid-area: "cant";
+    grid-column: 2 / 4;
+}
+
+.precio-producto {
+    grid-area: "precio";
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.boton-producto {
+    grid-area: "boton";
+    display: flex;
+    align-items: center;
+
+    background-color: rgb(0, 164, 229);
+    width: max-content;
+    padding: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.marca-producto {
+    grid-area: "marca";
+    grid-column: 1 / 4;
+}
+
+.cont-producto .bold {
+    font-weight: bold;
+}
+
+.descrip-producto {
+    grid-area: "descrip";
+    grid-column: 1 / 4;
+}
