@@ -23,7 +23,24 @@ button{
     pointer-events: none;
     z-index: 2500;
 }
-
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template:
+    ". . ."auto
+    ". PRO ."max-content
+    ". . ."auto
+    "FOO FOO FOO"max-content/
+    auto max-content auto;
+}
+body main{
+    grid-area: PRO;
+}
+body footer{
+    grid-area: FOO;
+}
 .cont-producto {
     background-color: #fff;
     width: 100%;

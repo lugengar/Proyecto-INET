@@ -19,29 +19,29 @@
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
 <body>
+    <main>
+        <div id="textura"></div>
+        <form class="cont-producto" action="./codigophp/productos.php" method="post">
 
-    <div id="textura"></div>
-    <form class="cont-producto" action="./codigophp/productos.php" method="post">
+            <div class="icon-producto">
+                <?php echo $icon; ?>
+            </div>
+            <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
+            <p class="cant-producto">Cantidad disponible: <?php echo $nombre_producto; ?></p>
+            <p class="precio-producto">$<?php echo $precio; ?></p>
+            <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
+            <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
+            <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
 
-        <div class="icon-producto">
-            <?php echo $icon; ?>
-        </div>
-        <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
-        <p class="cant-producto">Cantidad disponible: <?php echo $nombre_producto; ?></p>
-        <p class="precio-producto">$<?php echo $precio; ?></p>
-        <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
-        <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
-        <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
-
-        <div class="marca-producto">
-            <p class="bold">Marca:</p>
-            <p><?php echo $nombre_marca; ?></p>
-        </div>
-        <div class="descrip-producto">
-            <p class="bold">Descripción</p>
-            <p><?php echo $descripcion; ?></p>
-        </div>
-    </form>
+            <div class="marca-producto">
+                <p class="bold">Marca:</p>
+                <p><?php echo $nombre_marca; ?></p>
+            </div>
+            <div class="descrip-producto">
+                <p class="bold">Descripción</p>
+                <p><?php echo $descripcion; ?></p>
+            </div>
+        </form>
     <?php }?>
     </main>
     <?php include "footer.html"?>
