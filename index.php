@@ -13,13 +13,14 @@
     include "./codigophp/buscar.php";
     include "./codigophp/verificacion.php";
 if(!empty($_SESSION['aceptado'])){
-    echo '
-    
-<script src="./codigojs/confetti.js"></script>
-    <script>
-    createConfetti();
-    setTimeout(cleanUpConfetti, 4000);
-    </script>';
+    if($_SESSION['aceptado']== true){
+        echo '<script src="./codigojs/confetti.js"></script>
+            <script>
+                createConfetti();
+                setTimeout(cleanUpConfetti, 4000);
+            </script>';
+        $_SESSION["aceptado"] = null;
+    }
 }
 ?>
 <div id="textura"></div>
