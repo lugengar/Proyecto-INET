@@ -64,9 +64,7 @@ input[type="submit"] {
     z-index: 1000;
 }
 
-* {
-    /* background-color: red; */
-}
+/* { background-color: red;} */
 
 .confetti {
     width: 10px;
