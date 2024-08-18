@@ -22,7 +22,6 @@ function crearcategorias(){
 }
 function productosdelcarrito(){
     global $conn;
-    session_start();
     if (!empty($_SESSION['pedido'])) {
         if ($_SESSION['pedido']["productos"] != []) {
             $sql = "SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.id_producto IN (" . implode(",",$_SESSION['pedido']['productos']) . ")";

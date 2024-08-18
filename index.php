@@ -11,6 +11,7 @@
 <body>
 <?php
     include "./codigophp/buscar.php";
+    include "./codigophp/verificacion.php";
 
 ?>
 <div id="textura"></div>
@@ -18,12 +19,8 @@
     <div id="barralateral" class="barralateral">
         <a class="botonsalir" onclick="closeMenu()">&times;</a>
         <div class="contenidobarra">
-        <a href="./Formularios/signin.php">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-        <a href="#">Contacto</a>
-        <a href="#">Contacto</a>
-        <a href="#">Contacto</a>
+        <a href="./Formularios/resetuser.php">Cerrar sesion</a>
+        <a href="./historial.php">Historial de pedidos</a>
         <a href="#">Contacto</a>
         </div>
     </div>
@@ -36,13 +33,19 @@
             ?>
      
         </div>
-        <button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>
+        <?php
+            esusuario('<button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>','<a class="pagar" href="./Formularios/signin.php">Pagar</a>');
+        ?>
+        
     </form>
 
     <button class="carrito" onclick="openMenu2()"></button>
     <header class="header hidden" id="header">
             <a href="index.php" class="logo"></a>
-            <button class="user" onclick="openMenu()"></button>
+            <?php
+            esusuario('<button class="user" onclick="openMenu()"></button>','<a class="user" href="./Formularios/signin.php" style="background-image:none;">Inciar sesión</a>');
+            ?>
+            
         </header>
         <main class="carrusel ">
             <div class="imagenes">
@@ -50,9 +53,7 @@
             </video>
             <video autoplay muted class="imagen activo" id="videoPlayer2">
             </video>
-                <div class="imagen" style="background-image: url('imagenes/otros/gente.jpg');"></div>
-                <div class="imagen" style="background-image: url('imagenes/otros/graduados.jpg');"></div>
-               
+           
             </div>
             <div class="filtro" >
             <a onclick="redirigir('identificador1')"  class="texto1" id="texto1">Ver productos relacionados con fútbol</a>
@@ -83,7 +84,7 @@
                     ?>
                 </select>
               <?php
-                precio();
+               // precio();
               ?>
             </form>
            

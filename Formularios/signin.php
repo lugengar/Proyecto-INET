@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="css/estilos.css">
 
 </head>
-<body>
+<div id="textura"></div>
 
+<body>
+<div class="fondo">
+<div class="logocarrusel"></div>
+<a class="logocarrusel2" href="../index.php"></a>
 <form class="signin" action="" method="POST">
     <h2>Formulario de Registro</h2>
     <div class="inputs2">
@@ -19,3 +23,5 @@
     <p class="p">¿Aún no tenes una cuenta? <a href="signup.php">Registrate</a></p>
     <input type="submit" value="Inicia sesión" class="btn">
 </form>
+</div>
+</body>

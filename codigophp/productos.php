@@ -29,12 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "Producto y cantidad eliminados.".$indice;
         header("location: ../index.php#carrito");
-    } elseif ($tipodeboton[0] == "b" && $tipodeboton[1] == "u") {
+    } else if ($tipodeboton[0] == "b" && $tipodeboton[1] == "u") {
         $indice = intval($tipodeboton[2]);
         $_SESSION['pedido']['cantidad'][$indice]--;
         echo "Cantidad disminuida.".$indice;
         header("location: ../index.php#carrito");
-    } elseif ($tipodeboton == "añadir") {
+    } else if ($tipodeboton == "añadir") {
         $nuevo_id_producto = $_POST['id_producto']; 
         $nueva_cantidad = intval($_POST['cantidad']); 
     
@@ -52,6 +52,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Producto y cantidad agregados.";
         header("location: ../index.php");
 
+    }else if ($tipodeboton == "pagar") {
+        include "../codigophp/conexionbs.php";
+        
+        $estado = "en preparacion";
+        $fecha_entrega = ""; // Puedes definir una fecha o dejarla vacía según tus necesidades
+        $fk_usuario = $_SESSION['id_usuario'];
+        $productos_pedidos = json_encode($_SESSION['pedido']);
+
+        // Preparar la consulta SQL con placeholders sin comillas
+        $stmt = $conn->prepare("INSERT INTO pedidos (estado, fecha_entrega, productos_pedido, fk_usuario) VALUES (?, ?, ?, ?)");
+
+        // Vincular los parámetros con tipos correctos
+        $stmt->bind_param("ssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario);
+        $stmt->execute();
+
+        // Limpiar el carrito de compras
+        $_SESSION['pedido']['productos'] = [];
+        $_SESSION['pedido']['cantidad'] = [];
+
+        echo "Pedido creado";
+        
+        // Cerrar la declaración y la conexión
+        $stmt->close();
+        $conn->close();
+
+        // Redirigir al usuario si es necesario
+        // header("location: ../index.php");
     }
    
 

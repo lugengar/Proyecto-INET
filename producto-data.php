@@ -18,9 +18,12 @@
     <link rel="stylesheet" href="estiloscss/producto-data.css">
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
+<div id="textura"></div>
+
 <body>
     <main>
-        <div id="textura"></div>
+<a class="logocarrusel" href="./index.php"></a>
+
         <form class="cont-producto" action="./codigophp/productos.php" method="post">
 
             <div class="icon-producto">

@@ -1,8 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: arial;
+    color:#333333;
+}
+footer *{
+    color: white;
+}
+a,
+button {
+    transition: transform 0.5s;
+}
+
+input[type="submit"]:hover,
+a:hover,
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.logocarrusel {
+    width: 6dvh;
+    height: 6dvh;
+
+    background-image: url(../imagenes/iconos/casa.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 2dvh;
+    top: 2dvh;
+}
+
+h1,h2,
+button,
+.botonuni {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2dvh;
+}
+
+p,
+a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input,
+select {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    
+}
+
+option {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+}
+
+input[type="submit"] {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 button{
@@ -26,17 +92,21 @@ button{
 body{
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 100dvh;
     display: grid;
     grid-template:
-    ". . ."auto
+    ". . ."10dvh
     ". PRO ."max-content
     ". . ."auto
     "FOO FOO FOO"max-content/
-    auto max-content auto;
+    auto auto auto;
+    background-color: #333333;
 }
 body main{
     grid-area: PRO;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body footer{
     grid-area: FOO;
@@ -51,8 +121,8 @@ body footer{
     border-radius: 15px;
 
     display: grid;
-    grid-template-columns: 50% 1fr 1fr;
-    grid-template-rows: auto 2dvh 4dvh auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
         "icon nombre nombre"
         "icon cant cant"
@@ -68,8 +138,7 @@ body footer{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-size: 25dvh;
+    font-size: 20dvh;
 }
 
 .nombre-producto {
@@ -117,4 +186,5 @@ body footer{
 .descrip-producto {
     grid-area: "descrip";
     grid-column: 1 / 4;
+    overflow-y: auto;
 }
