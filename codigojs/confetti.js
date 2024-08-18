@@ -1,5 +1,5 @@
 //CODIGO PARA CREAR CONFETTI EN ALGUN CASO
-
+/*
 let click = false;
 document.querySelectorAll(".inscribirse").forEach(element => {
     element.addEventListener('click', function(event) {
@@ -10,7 +10,7 @@ document.querySelectorAll(".inscribirse").forEach(element => {
         }
     });
 });
-
+*/
 function createConfetti() {
     const confettiColors = ['#ff4136', '#0074d9', '#2ecc40', '#ffdc00', '#ff1493']; 
     const confettiElements = 40;

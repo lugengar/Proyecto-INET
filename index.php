@@ -12,7 +12,15 @@
 <?php
     include "./codigophp/buscar.php";
     include "./codigophp/verificacion.php";
-
+if(!empty($_SESSION['aceptado'])){
+    echo '
+    
+<script src="./codigojs/confetti.js"></script>
+    <script>
+    createConfetti();
+    setTimeout(cleanUpConfetti, 4000);
+    </script>';
+}
 ?>
 <div id="textura"></div>
 <div class="container" >

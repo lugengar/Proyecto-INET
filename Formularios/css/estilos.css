@@ -51,6 +51,40 @@ input[type="submit"] {
     color: white;
     font-style: normal;
 }
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1000;
+}
+*{
+    background-color: red;
+}
+.confetti {
+    width: 10px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    opacity: 0;
+    animation: confettiFall linear infinite;
+
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 100%;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0%;
+        transform: translateY(100dvh) rotate(360deg);
+    }
+}
 .logocarrusel2 {
     width: 6dvh;
     height: 6dvh;

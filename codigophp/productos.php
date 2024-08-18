@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../index.php");
 
     }else if ($tipodeboton == "pagar") {
-        include "../codigophp/conexionbs.php";
+        /*include "../codigophp/conexionbs.php";
         
         $estado = "en preparacion";
         $fecha_entrega = ""; // Puedes definir una fecha o dejarla vacía según tus necesidades
@@ -74,10 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Cerrar la declaración y la conexión
         $stmt->close();
-        $conn->close();
+        $conn->close();*/
 
         // Redirigir al usuario si es necesario
-        header("location: ../pagar.php");
+        header("location: ../Formularios/pagar.php");
     }
    
 
