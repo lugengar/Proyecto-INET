@@ -31,6 +31,11 @@ if(!empty($_SESSION['aceptado'])){
         <a href="./Formularios/resetuser.php">Cerrar sesion</a>
         <a href="./historial.php">Historial de pedidos</a>
         <a href="#">Contacto</a>
+        <?php
+        if ($_SESSION['jerarquia'] == "vendedor"){
+            echo '<a href="administrar-productos.php">Administrar productos</a>';
+        }
+        ?>
         </div>
     </div>
 
@@ -120,6 +125,3 @@ if(!empty($_SESSION['aceptado'])){
 <script src="codigojs/redirigir.js"></script>
 <script src="codigojs/botonesbarra.js"></script>
 <script src="codigojs/scroll.js"></script>
-<script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
