@@ -19,8 +19,10 @@
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
 <body>
+
     <div id="textura"></div>
     <form class="cont-producto" action="./codigophp/productos.php" method="post">
+
         <div class="icon-producto">
             <?php echo $icon; ?>
         </div>
@@ -41,7 +43,8 @@
         </div>
     </form>
     <?php }?>
-
+    </main>
+    <?php include "footer.html"?>
 
     <script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>    

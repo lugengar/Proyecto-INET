@@ -34,6 +34,12 @@
         <?php
             productosdelcarrito();
             ?>
+            <div class="productocarrito">
+                <h1></h1>
+                <input type="hidden" value="" name="producto">
+                <input type="hidden" value="" name="cantidad">
+                <input type="hidden" value="" name="precio">
+            </div>
         </div>
         <button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>
     </form>

@@ -1,0 +1,54 @@
+footer {
+    background-color: #333333;
+    width: 100%;
+    height: fit-content;
+    color: #f2f2f2;
+}
+
+footer .cont-footer {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr;
+    grid-template-rows: 1fr 30px;
+    grid-template-areas:
+        "icon datos redes"
+        "icon copy copy";
+    padding: 25px 10px 15px 10px;
+    gap: 20px;
+}
+
+.cont-footer .icon {
+    grid-area: "icon";
+    grid-row: 1 / 3;
+    width: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-footer .icon img {
+    height: 80px;
+}
+
+.cont-footer .datos {
+    grid-area: "datos";
+}
+
+.cont-footer .redes {
+    grid-area: "redes";
+}
+
+.cont-footer .copy {
+    grid-area: "copy";
+    grid-column: 2 / 4;
+    border-top: 3px solid #f2f2f2;
+    padding-top: 3px;
+}
+
+.cont-footer .cont-redes i {
+    font-size: 1.8rem;
+}
