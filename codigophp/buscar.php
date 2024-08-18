@@ -23,19 +23,21 @@ function crearcategorias(){
 function productosdelcarrito(){
     global $conn;
     session_start();
-    $id_producto = $_SESSION['pedido']['productosxunidad'];
     if (!empty($_SESSION['pedido'])) {
-        $sql = "SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.id_producto IN (" . implode(",",$_SESSION['pedido']['productosxunidad']) . ")";
-        $result = mysqli_query($conn, $sql);
-        if ($result->num_rows > 0) {
-            foreach ($result as $index => $row) {
-                carritoproducto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"]);
-            }
-        } else {
-            echo "<h1>NO HAY PRODUCTOS AUN</h1>";
+        if ($_SESSION['pedido']["productos"] != []) {
+            $sql = "SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.id_producto IN (" . implode(",",$_SESSION['pedido']['productos']) . ")";
+            $result = mysqli_query($conn, $sql);
+            if ($result->num_rows > 0) {
+                foreach ($result as $index => $row) {
+                    carritoproducto($index, $row["icon"],$row["nombre_producto"], $row["precio"],$_SESSION['pedido']['cantidad'][$index]);
+                }
+            } 
+        }else {
+            echo "<h1 id='nada'>NO HAY PRODUCTOS AUN</h1>";
         }
     } else {
-        echo "<h1>NO HAY PRODUCTOS AUN</h1>";
+        $_SESSION['pedido'] = ["productos" => [],"cantidad" => []];
+        echo "<h1 id='nada'>NO HAY PRODUCTOS AUN</h1>";
     }
 }
 function precio(){

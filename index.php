@@ -27,15 +27,17 @@
         <a href="#">Contacto</a>
         </div>
     </div>
-    <form id="barracarrito" class="barralateral carro">
+
+    <form id="barracarrito" class="barralateral carro" action="./codigophp/productos.php" method="post">
         <a class="botonsalir" onclick="closeMenu2()">&times;</a>
         <div class="contenidobarra">
-            <?php
+        <?php
             productosdelcarrito();
             ?>
         </div>
-        <input type="submit" class="pagar" value="pagar">
+        <button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>
     </form>
+
     <button class="carrito" onclick="openMenu2()"></button>
     <header class="header hidden" id="header">
             <a href="index.php" class="logo"></a>
@@ -115,7 +117,6 @@
 </html>
 <script src="codigojs/carrusel.js"></script>
 <script src="codigojs/redirigir.js"></script>
-<script src="codigojs/ventanas.js"></script>
 <script src="codigojs/botonesbarra.js"></script>
 <script src="codigojs/scroll.js"></script>
 <script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>

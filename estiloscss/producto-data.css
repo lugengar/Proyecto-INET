@@ -4,24 +4,22 @@
     box-sizing: border-box;
     font-family: arial;
 }
-
-#textura {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    opacity: .1;
+button{
+    cursor: pointer;
 }
-
-#textura img {
+#textura {
+    background-image: url(../imagenes/SVG/textura.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
     width: 100%;
     height: 100%;
-    transform: scale(110%);
+    left: 0%;
+    top: 0%;
+    opacity: 50%;
+    pointer-events: none;
+    z-index: 2500;
 }
 
 .cont-producto {

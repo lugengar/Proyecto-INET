@@ -19,15 +19,18 @@
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>
 <body>
-    <div id="textura"><img src="imagenes/textura.png" alt=""></div>
-    <div class="cont-producto">
+    <div id="textura"></div>
+    <form class="cont-producto" action="./codigophp/productos.php" method="post">
         <div class="icon-producto">
             <?php echo $icon; ?>
         </div>
         <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
         <p class="cant-producto">Cantidad disponible: <?php echo $nombre_producto; ?></p>
         <p class="precio-producto">$<?php echo $precio; ?></p>
-        <a href="#" class="boton-producto">Añadir al carrito</a>
+        <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
+        <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
+        <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
+
         <div class="marca-producto">
             <p class="bold">Marca:</p>
             <p><?php echo $nombre_marca; ?></p>
@@ -36,7 +39,7 @@
             <p class="bold">Descripción</p>
             <p><?php echo $descripcion; ?></p>
         </div>
-    </div>
+    </form>
     <?php }?>
 
 

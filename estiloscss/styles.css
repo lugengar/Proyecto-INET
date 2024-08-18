@@ -235,10 +235,9 @@ input[type="submit"] {
 
 }
 
-.contenidobarra a {
+.contenidobarra a, .contenidobarra #nada {
     width: 100%;
     height: 20dvh;
-    border-bottom: #00aec3;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -315,7 +314,7 @@ input[type="submit"] {
 
 .barralateral.abierto {
     width: 50dvh;
-    border-left: #333333 1dvh solid;
+    border-left: #333333 2dvh solid;
 
 }
 
@@ -626,7 +625,16 @@ input[type="submit"] {
     "BTN PREC PREC";
     padding: 2dvh;
     grid-template-rows: 10dvh auto auto;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto auto ;
+}
+.productocarrito.botones2 {
+    grid-template:
+    "NOM NOM NOM ICO"
+    "NOM NOM NOM ICO"
+    "BTN BTN2 PREC PREC";
+    padding: 2dvh;
+    grid-template-rows: 10dvh auto auto;
+    grid-template-columns: auto auto auto auto ;
 }
 .productocarrito .nombre{
     grid-area: NOM;
@@ -643,6 +651,17 @@ input[type="submit"] {
     color: white;
     margin: 2dvh;
 }
+.productocarrito .botonborrar.solouno{
+    grid-area: BTN2;
+    font-size: 2dvh;
+    color: #333333;
+    border: none;
+    border-radius: 25dvh;
+    background-color: #75AADB;
+    color: white;
+    margin: 2dvh;
+}
+
 .productocarrito .precio{
     grid-area: PREC;
     font-size: 2dvh;

@@ -25,7 +25,7 @@ function sanitizarEntrada($data, $conexion) {
     return $data;
 }
 session_start();
-session_unset();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir y sanitizar los datos del formulario
     $correo = sanitizarEntrada($_POST['correo'], $conexion);
@@ -41,11 +41,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->fetch();
 
         if (password_verify($contrasenia, $contrasenia_encriptada)) {
-            $_SESSION['jerarquia'] = $jerarquia;
-            $_SESSION['nombre'] = $nombre;
-            $_SESSION['id_usuario'] = $id_usuario;
-            $_SESSION['pedido'] = ["productosxunidad" => [1, 2, 3, 4]];
-            header("location: ../index.php");
+            if (!empty($_SESSION['pedido'])) {
+                $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['id_usuario'] = $id_usuario;
+            }else{
+                session_unset();
+                $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['id_usuario'] = $id_usuario;
+                $_SESSION['pedido'] = ["productos" => [],"cantidad" => []];
+            }
+           header("location: ../index.php");
         } else {
             echo "<p class='error_contra'>Contraseña incorrecta. Por favor, inténtelo de nuevo.</p>";
         }

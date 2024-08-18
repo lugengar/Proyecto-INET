@@ -24,6 +24,12 @@ function closeMenu() {
     document.getElementById("barralateral").classList.remove('abierto');
 
 }
+
+const fragmento = window.location.hash;
+console.log(fragmento, "a");
+if(fragmento == "#carrito"){
+    openMenu2();
+}
 function openMenu2() {
 
     document.getElementById("barracarrito").classList.add('abierto');

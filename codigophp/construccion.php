@@ -16,15 +16,26 @@ function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
     </div>
     ');
 }
-function carritoproducto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
+function carritoproducto($index, $icon, $nombre, $precio,$cantidad){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
-    echo('<div class="productocarrito">
-            <h1 class="nombre">'.$nombre.'</h1>
-            <p class="precio">Precio: $'.$precio.'</p>
-            <button href="./universidad.php?universidad='.$id.'"class="botonborrar">Eliminar &times;</button>
-            <div class="icono">'.$icon.'</div>
-        </div>
-    ');
+   if($cantidad > 1){ 
+        echo('<div class="productocarrito botones2">
+                <h1 class="nombre">'.$nombre." x".$cantidad.'</h1>
+                <p class="precio">Precio: $'.($precio * $cantidad).'</p>
+                <button type="submit" name="enviar" value="bt'.$index.'" class="botonborrar">Eliminar todo &times;</button>
+                <button type="submit" name="enviar" value="bu'.$index.'" class="botonborrar solouno">1 -</button>
+                <div class="icono">'.$icon.'</div>
+            </div>
+        ');
+    }else{
+        echo('<div class="productocarrito">
+                <h1 class="nombre">'.$nombre." x".$cantidad.'</h1>
+                <p class="precio">Precio: $'.($precio * $cantidad).'</p>
+                <button type="submit" name="enviar" value="bt'.$index.'" class="botonborrar">Eliminar &times;</button>
+                <div class="icono">'.$icon.'</div>
+            </div>
+        ');
+    }
 }
 function crearmapa($ubicacion){ //CREA EL MAPA CON LA UBICACION A TRAVEZ DE UNA URL MODIFICADA
     $url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.4006114986105!2d-58.53745522416194!3d-34.51807695298058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0946037da75%3A0x7fae4b92e6699b59!2s";
