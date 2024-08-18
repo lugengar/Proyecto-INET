@@ -83,7 +83,7 @@ input[type="submit"] {
         "HEA HEA HEA"
         "MAI MAI MAI"
         "FOO FOO FOO";
-    grid-template-rows: 90dvh 7dvh auto 60dvh;
+    grid-template-rows: 90dvh 7dvh auto max-content;
     grid-template-columns: auto auto auto;
 }
 

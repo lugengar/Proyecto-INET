@@ -50,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['pedido']['productos'] = $id_producto;
         $_SESSION['pedido']['cantidad'] = $cantidad;
         echo "Producto y cantidad agregados.";
+        header("location: ../index.php");
+
     }
-    header("location: ../index.php");
+   
 
 }
 ?>

@@ -34,12 +34,7 @@
         <?php
             productosdelcarrito();
             ?>
-            <div class="productocarrito">
-                <h1></h1>
-                <input type="hidden" value="" name="producto">
-                <input type="hidden" value="" name="cantidad">
-                <input type="hidden" value="" name="precio">
-            </div>
+     
         </div>
         <button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>
     </form>
@@ -107,17 +102,7 @@
             </div>
         </main>
 
-        <footer class="footer">
-            <div class="imagenfooter"></div>
-            <div class="logo_pba_vertical2"></div>
-
-            <div class="textofooter">
-                <h1>&copy; 2024 Escuela Secundaria Técnica N1 Vicente Lopez. Todos los derechos reservados.</h1>
-            </div>
-            <div class="redesociales">
-      
-            </div>
-        </footer>
+        <?php include "footer.html"?>
     </div>
 </body>
 </html>
