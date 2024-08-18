@@ -68,8 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         // Limpiar el carrito de compras
-        $_SESSION['pedido']['productos'] = [];
-        $_SESSION['pedido']['cantidad'] = [];
+        
 
         echo "Pedido creado";
         
@@ -78,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->close();
 
         // Redirigir al usuario si es necesario
-        // header("location: ../index.php");
+        header("location: ../pagar.php");
     }
    
 
