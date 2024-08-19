@@ -12,6 +12,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_producto = $_SESSION['pedido']['productos'];
     $cantidad = $_SESSION['pedido']['cantidad'];
+    $precios = $_SESSION['pedido']['precios'];
 
     $tipodeboton = $_POST["enviar"];
     
@@ -37,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else if ($tipodeboton == "añadir") {
         $nuevo_id_producto = $_POST['id_producto']; 
         $nueva_cantidad = intval($_POST['cantidad']); 
+        $nuevo_precio = intval($_POST['precio']); 
     
         $indice = array_search($nuevo_id_producto, $id_producto);
     
@@ -45,10 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $id_producto[] = $nuevo_id_producto;
             $cantidad[] = $nueva_cantidad;
+            $precios[] = $nuevo_precio;
         }
     
         $_SESSION['pedido']['productos'] = $id_producto;
         $_SESSION['pedido']['cantidad'] = $cantidad;
+        $_SESSION['pedido']['precios'] = $precios;
         echo "Producto y cantidad agregados.";
         header("location: ../index.php");
 

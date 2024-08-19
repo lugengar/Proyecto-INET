@@ -35,7 +35,7 @@ function productosdelcarrito(){
             echo "<h1 id='nada'>NO HAY PRODUCTOS AUN</h1>";
         }
     } else {
-        $_SESSION['pedido'] = ["productos" => [],"cantidad" => []];
+        $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
         echo "<h1 id='nada'>NO HAY PRODUCTOS AUN</h1>";
     }
 }
