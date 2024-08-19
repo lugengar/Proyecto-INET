@@ -1161,3 +1161,36 @@ body.inactive .overlay {
         background-position-x: 100dvh;
     }
 }
+.cubrirtodo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background-color: #333333;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template: 
+    ". . ."6dvh
+    ". CON ."auto
+    "FOO FOO FOO"auto/
+    2dvh auto 2dvh;
+}
+.contenidohistorial {
+    grid-area: CON;
+    background-color: transparent;
+
+}
+.logocarrusel2 {
+    width: 6dvh;
+    height: 6dvh;
+
+    background-image: url(../imagenes/iconos/casa.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 2dvh;
+    top: 2dvh;
+}

@@ -21,12 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         unset($cantidad[$indice]);
         unset($id_producto[$indice]);
+        unset($precios[$indice]);
 
         $cantidad = array_values($cantidad);
         $id_producto = array_values($id_producto);
+        $precios = array_values($precios);
 
         $_SESSION['pedido']['productos'] = $id_producto;
         $_SESSION['pedido']['cantidad'] = $cantidad;
+        $_SESSION['pedido']['precios'] = $precios;
 
         echo "Producto y cantidad eliminados.".$indice;
         header("location: ../index.php#carrito");

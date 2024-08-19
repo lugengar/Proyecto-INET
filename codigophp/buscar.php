@@ -91,7 +91,7 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
     $busqueda = $_GET['busqueda'];
     if ($busqueda != null && $categoria != null){
         $param = "%$busqueda%";
-        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ? AND p.fk_categoria = ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ? AND p.fk_categoria = ? ORDER BY p.cantidad_vendidos DESC");
 
         
         $stmt->bind_param("ss", $param,$categoria);
@@ -100,14 +100,14 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
         $result = $stmt->get_result();
 
     }else if ($categoria != null){
-        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.fk_categoria = ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.fk_categoria = ? ORDER BY p.cantidad_vendidos DESC");
         $stmt->bind_param("s", $categoria);
         $stmt->execute();
     
         $result = $stmt->get_result();
     }else if ($busqueda != null){
         $param = "%$busqueda%";
-        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ?");
+        $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.nombre_producto LIKE ? ORDER BY p.cantidad_vendidos DESC");
     
         $stmt->bind_param("s", $param);
         $stmt->execute();
@@ -115,7 +115,7 @@ if (isset($_GET['busqueda']) && isset($_GET['categoria'])) {
         $result = $stmt->get_result();
     }
 }else{
-    $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria");
+    $stmt = $conn->prepare("SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria ORDER BY p.cantidad_vendidos DESC");
   
     $stmt->execute();
 
@@ -127,7 +127,7 @@ if ($result != null){
     echo "<p class= 'error' >No se encontraron resultados para la búsqueda: " . htmlspecialchars($busqueda)."</p>";
 }else{
     while ($row = $result->fetch_assoc()) {
-        producto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"]);
+        producto($row["id_producto"], $row["icon"],$row["nombre_producto"], $row["precio"], $row["cantidad_disponible"]);
     }
    /*
     while ($row = $result->fetch_assoc()) {

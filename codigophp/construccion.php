@@ -5,16 +5,22 @@
 $direccionimagen = "./imagenes/otros/";
 
 
-function producto($id, $icon, $nombre, $precio){ //CREA EL CUADRO DE UNIVERSIDAD
+function producto($id, $icon, $nombre, $precio, $cantidad_disponible){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
     echo '<div class="universidad">';
-    echo('
-        <div class="icon">'.$icon.'</div>
-        <h1 class="nombreuni">'.$nombre.'</h1>
-        <p class="descripcionuni">Precio: $'.$precio.'</p>
-        <a href="./producto-data.php?producto='.$id.'"  class="botonuni"></a>
+    echo'<div class="icon">'.$icon.'</div>';
+        if($cantidad_disponible > 0){
+        echo ('<h1 class="nombreuni">'.$nombre.'</h1>
+            <p class="descripcionuni">Precio: $'.$precio.'</p>
+            <a href="./producto-data.php?producto='.$id.'"  class="botonuni"></a>
+        </div>
+    ');
+        }else{
+            echo ('
+                <h1 class="nombreuni">SIN STOCK</h1>
     </div>
     ');
+        }
 }
 function carritoproducto($index, $icon, $nombre, $precio,$cantidad){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;

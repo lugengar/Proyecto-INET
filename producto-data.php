@@ -30,7 +30,7 @@
                 <?php echo $icon; ?>
             </div>
             <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
-            <p class="cant-producto">Cantidad disponible: <?php echo $nombre_producto; ?></p>
+            <p class="cant-producto">Cantidad disponible: <?php echo $stock; ?></p>
             <p class="precio-producto">$<?php echo $precio; ?></p>
             <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
             <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>

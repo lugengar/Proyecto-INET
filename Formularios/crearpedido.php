@@ -13,6 +13,34 @@ if(!empty($_SESSION['pedido'])){
     // Preparar la consulta SQL con placeholders sin comillas
     $stmt = $conn->prepare("INSERT INTO pedidos (estado, fecha_entrega, productos_pedido, fk_usuario, precio_total) VALUES (?, ?, ?, ?, ?)");
 
+    $productos = $_SESSION['pedido']['productos'];  // Array de IDs de productos
+    $cantidadesVendidas = $_SESSION['pedido']['cantidad'];  // Array de cantidades vendidas correspondientes a cada producto
+    $cantidadesDisponibles = $_SESSION['pedido']['cantidad'];  // Array de cantidades disponibles correspondientes a cada producto
+    
+    $sql = "UPDATE producto SET 
+        cantidad_vendidos = CASE id_producto ";
+    
+    foreach ($productos as $index => $id_producto) {
+        $sql .= "WHEN $id_producto THEN (cantidad_vendidos + " . $cantidadesVendidas[$index] . ") ";
+    }
+    
+    $sql .= "END, 
+        cantidad_disponible = CASE id_producto ";
+    
+    foreach ($productos as $index => $id_producto) {
+        $sql .= "WHEN $id_producto THEN (cantidad_disponible - " . $cantidadesVendidas[$index] . ") ";
+    }
+    
+    $sql .= "END 
+        WHERE id_producto IN (" . implode(",", $productos) . ")";
+    
+    // Ejecutar la consulta
+    if ($conn->query($sql) === TRUE) {
+        echo "Productos actualizados correctamente.";
+    } else {
+        echo "Error al actualizar productos: " . $conn->error;
+    }
+
     // Vincular los parámetros con tipos correctos
     $stmt->bind_param("sssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total']);
     $stmt->execute();
