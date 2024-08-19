@@ -9,10 +9,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-   
+
 }
 
-h1,h2,
+h1,
+h2,
 button,
 .botonuni {
     font-family: "Russo One", sans-serif;
@@ -35,7 +36,7 @@ select {
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
-    
+
 }
 
 option {
@@ -51,6 +52,7 @@ input[type="submit"] {
     color: white;
     font-style: normal;
 }
+
 .confetti-container {
     position: fixed;
     top: 0;
@@ -61,7 +63,6 @@ input[type="submit"] {
     pointer-events: none;
     z-index: 1000;
 }
-
 
 @keyframes confettiFall {
     0% {
@@ -74,6 +75,7 @@ input[type="submit"] {
         transform: translateY(100dvh) rotate(360deg);
     }
 }
+
 .logocarrusel2 {
     width: 6dvh;
     height: 6dvh;
@@ -86,10 +88,12 @@ input[type="submit"] {
     right: 2dvh;
     top: 2dvh;
 }
-button{
+
+button {
     cursor: pointer;
 }
-.fondo{
+
+.fondo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +105,7 @@ button{
     background: radial-gradient(ellipse 150dvh 75dvh at 50% 20%, #33333353, #333333 98%);
 
 }
+
 .logocarrusel {
     width: 10dvh;
     height: 10dvh;
@@ -113,8 +118,9 @@ button{
     left: 5dvh;
     top: 5dvh;
 }
+
 #textura {
-    
+
     background-image: url(../../imagenes/SVG/textura.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -128,6 +134,7 @@ button{
     pointer-events: none;
     z-index: 2500;
 }
+
 form {
     background-color: var(--bg);
     width: 100%;

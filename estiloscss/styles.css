@@ -3,6 +3,8 @@
 
 /*ESTILOS GLOBALES*/
 * {
+    margin: 0;
+    padding: 0;
     font-size: 2dvh;
 }
 
@@ -41,7 +43,7 @@ select {
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
-    
+
 }
 
 option {
@@ -235,7 +237,8 @@ input[type="submit"] {
 
 }
 
-.contenidobarra a, .contenidobarra #nada {
+.contenidobarra a,
+.contenidobarra #nada {
     font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -253,7 +256,7 @@ input[type="submit"] {
 
 
 .barralateral {
-    
+
     width: 0dvh;
     height: 100%;
     position: fixed;
@@ -307,6 +310,7 @@ input[type="submit"] {
     margin-left: 4dvh;
     margin-right: 4dvh;
 }
+
 .carrito {
     position: fixed;
     right: 5dvh;
@@ -614,7 +618,7 @@ input[type="submit"] {
     border-radius: 2dvh;
     box-shadow: 0 0.5dvh 2dvh 0.5dvh rgba(0, 0, 0, 0.2);
     display: flex;
-    gap: 0;
+    gap: 5px;
     justify-content: center;
     align-items: top;
     flex-wrap: wrap;
@@ -632,28 +636,31 @@ input[type="submit"] {
     background-color: white;
     display: grid;
     grid-template:
-    "NOM NOM ICO"
-    "NOM NOM ICO"
-    "BTN PREC PREC";
+        "NOM NOM ICO"
+        "NOM NOM ICO"
+        "BTN PREC PREC";
     padding: 2dvh;
     grid-template-rows: 10dvh auto auto;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: auto auto auto;
 }
+
 .productocarrito.botones2 {
     grid-template:
-    "NOM NOM NOM ICO"
-    "NOM NOM NOM ICO"
-    "BTN BTN2 PREC PREC";
+        "NOM NOM NOM ICO"
+        "NOM NOM NOM ICO"
+        "BTN BTN2 PREC PREC";
     padding: 2dvh;
     grid-template-rows: 10dvh auto auto;
-    grid-template-columns: auto auto auto auto ;
+    grid-template-columns: auto auto auto auto;
 }
-.productocarrito .nombre{
+
+.productocarrito .nombre {
     grid-area: NOM;
     font-size: 2dvh;
     color: #333333;
 }
-.productocarrito .botonborrar{
+
+.productocarrito .botonborrar {
     grid-area: BTN;
     font-size: 2dvh;
     color: #333333;
@@ -663,7 +670,8 @@ input[type="submit"] {
     color: white;
     margin: 2dvh;
 }
-.productocarrito .botonborrar.solouno{
+
+.productocarrito .botonborrar.solouno {
     grid-area: BTN2;
     font-size: 2dvh;
     color: #333333;
@@ -674,13 +682,14 @@ input[type="submit"] {
     margin: 2dvh;
 }
 
-.productocarrito .precio{
+.productocarrito .precio {
     grid-area: PREC;
     font-size: 2dvh;
     color: #333333;
     text-align: end;
 }
-.productocarrito .icono{
+
+.productocarrito .icono {
     grid-area: ICO;
     text-align: center;
     display: flex;
@@ -688,18 +697,21 @@ input[type="submit"] {
     align-items: center;
     color: #333333;
 }
-.productocarrito .icono ion-icon,.productocarrito .icono i {
+
+.productocarrito .icono ion-icon,
+.productocarrito .icono i {
     font-size: 8dvh;
 }
+
 .universidad .botonuni {
     border: none;
-    height: 100%;
+    height: 100%;   
     width: 100%;
     text-decoration: none;
     position: absolute;
 }
 
-.universidad:hover{
+.universidad:hover {
     transform: translateY(-1dvh) scale(1.1);
 }
 
@@ -767,7 +779,7 @@ input[type="submit"] {
     /* padding-top: 1dvh; */
     font-size: 3dvh;
     width: 100%;
-    height: max-content;
+    height: 8dvh;
     padding-left: 2dvh;
     padding-right: 2dvh;
     color: #333333;
@@ -788,7 +800,7 @@ input[type="submit"] {
     font-weight: bold;
     width: 100%;
     height: 2dvh;
-    font-size: 2.5dvh; 
+    font-size: 2.5dvh;
     /* overflow-y: auto; */
     padding-right: 2dvh;
     padding-left: 2dvh;
