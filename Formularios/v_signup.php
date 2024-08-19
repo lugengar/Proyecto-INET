@@ -24,6 +24,7 @@ function sanitizarEntrada($data, $conexion) {
     
     return $data;
 }
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir y sanitizar los datos del formulario
@@ -57,7 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Vincular parámetros a la consulta preparada
             $stmt->bind_param("sssss", $nombre, $apellido, $contrasenia_encriptada, $correo, $direccion);
-
+            if (!empty($_SESSION['pedido'])) {
+                $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['id_usuario'] = $id_usuario;
+            }else{
+                session_unset();
+                $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['nombre'] = $nombre;
+                $_SESSION['id_usuario'] = $id_usuario;
+                $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
+            }
             // Ejecutar la consulta
             if ($stmt->execute()) {
                 header("location: ../index.php");

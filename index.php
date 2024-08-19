@@ -30,11 +30,9 @@ if(!empty($_SESSION['aceptado'])){
         <div class="contenidobarra">
         <a href="./Formularios/resetuser.php">Cerrar sesion</a>
         <a href="./historial.php">Historial de pedidos</a>
-        <a href="#">Contacto</a>
         <?php
-        if ($_SESSION['jerarquia'] == "vendedor"){
-            echo '<a href="administrar-productos.php">Administrar productos</a>';
-        }
+        esadmin('<a href="administrar-productos.php">Administrar productos</a>');
+
         ?>
         </div>
     </div>

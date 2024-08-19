@@ -1,8 +1,6 @@
 <?php
     include "./codigophp/verificacion.php";
-    if ($_SESSION['jerarquia'] != 'vendedor'){
-        header("Location: index.php");
-    }
+    soloadmin();
     include "./codigophp/buscar.php";
     include "codigophp/conexionbs.php";
 ?>

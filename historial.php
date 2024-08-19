@@ -20,15 +20,6 @@
             include "./codigophp/obtenerhistorial.php";
 
         ?>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
-        <div class="universidad"><p>Producto: Pelota de tenis</p><p>Cantidad: 1</p><p>Precio unitario: 5000</p><p>Fecha del pedido: 0000-00-00</p><p>Total: $5000</p><p>Método de pago: </p><p>Fecha de entrega: 0000-00-00</p><p>Estado: en preparacion</p></div>
         </div>   
         <?php include "footer.html"?>
 
