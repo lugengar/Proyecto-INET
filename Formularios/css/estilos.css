@@ -64,18 +64,6 @@ input[type="submit"] {
     z-index: 1000;
 }
 
-/* { background-color: red;} */
-
-.confetti {
-    width: 10px;
-    height: 20px;
-    /* background-color: red; */
-    position: absolute;
-    opacity: 0;
-    animation: confettiFall linear infinite;
-
-}
-
 @keyframes confettiFall {
     0% {
         opacity: 100%;
