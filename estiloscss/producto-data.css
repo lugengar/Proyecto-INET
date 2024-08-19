@@ -126,7 +126,7 @@ body footer{
     grid-template-areas:
         "icon nombre nombre"
         "icon cant cant"
-        "icon precion boton"
+        "icon precion aniadir"
         "marca marca marca"
         "descrip descrip descrip";
     gap: 20px;
@@ -160,9 +160,10 @@ body footer{
 
     font-weight: bold;
 }
-
+.aniadir-producto{
+    grid-area: "aniadir";
+}
 .boton-producto {
-    grid-area: "boton";
     display: flex;
     align-items: center;
 

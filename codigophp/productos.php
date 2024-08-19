@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: ../index.php#carrito");
     } else if ($tipodeboton == "añadir") {
         $nuevo_id_producto = $_POST['id_producto']; 
-        $nueva_cantidad = intval($_POST['cantidad']); 
+        $nueva_cantidad = intval($_POST['cant-producto']); 
         $nuevo_precio = intval($_POST['precio']); 
     
         $indice = array_search($nuevo_id_producto, $id_producto);

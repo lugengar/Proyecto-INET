@@ -32,7 +32,15 @@
             <h2 class="nombre-producto"><?php echo $nombre_producto; ?></h2>
             <p class="cant-producto">Cantidad disponible: <?php echo $stock; ?></p>
             <p class="precio-producto">$<?php echo $precio; ?></p>
-            <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
+            <div class="aniadir-producto">
+                <div class="cant-aniadir">
+                    <div id="minus"><i class="fa-solid fa-minus"></i></div>
+                    <input type="hidden" name="max" id="max" value="<?php echo $stock; ?>">
+                    <input type="number" name="cant-producto" id="cant-producto" value="" ReadOnly>
+                    <div id="plus"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <button type="submit" name="enviar" value="añadir" class="boton-producto">Añxadir al carrito</button>
+            </div>
             <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
             <?php echo '<input type="hidden" name="precio" value="'.$precio.'">'; ?>
             <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
@@ -50,6 +58,7 @@
     </main>
     <?php include "footer.html"?>
 
+    <script src="codigojs/cantCarrito.js"></script>
     <script src="https://kit.fontawesome.com/45f45403cb.js" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>    
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
