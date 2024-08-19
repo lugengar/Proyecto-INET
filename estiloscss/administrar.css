@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
 header {
     background: #333333;
     display: flex;
@@ -24,32 +30,46 @@ header h1 {
     width: 100%;
     height: 100vh;
     z-index: 899;
+    display: none;
 }
 
 .modal-add {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: scale(0)translateX(-50%);
+    transform-origin: left top;
+    transition: transform ease .5s;
 
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     height: fit-content;
     z-index: 900;
     padding: 20px;
     border-radius: 10px;
+
 }
 
 .modal-add .text {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.modal-add .text p {
+    font-family: "Russo One", sans-serif;
+    font-size: 2rem;
+}
+
+.modal-add .text i {
+    font-size: 3rem;
 }
 
 .modal-add form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 5px;
 }
 
@@ -57,13 +77,133 @@ header h1 {
     margin-bottom: 10px;
     border: none;
     outline: none;
+    /* width: 100%; */
     height: 30px;
-    padding-left: 10px;
-    border-radius: 7px;
+    padding-left: 5px;
+    border-bottom: 1px solid #333;
 }
 
-.modal-add select,
-.modal-add option {
+.modal-add select {
+    height: 30px;
+}
+
+.modal-add form .botones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: self-start;
+    gap: 20px;
+}
+
+.modal-add input[type="submit"] {
+    background-color: #008cd8;
     border: none;
     outline: none;
+    color: #fff;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.modal-add input[type="submit"]:hover {
+    transform: scale(1);
+}
+
+.modal-add .botones .cancelar {
+    background-color: #484848;
+    height: 30px;
+    color: #fff;
+    font-family: "Russo One", sans-serif;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+#add:checked~main .modal-add {
+    transform: scale(1)translateX(-50%);
+
+}
+
+#add:checked~main .shadow-modal {
+    display: flex;
+}
+
+
+
+
+main {
+    width: 100%;
+    height: fit-content;
+    min-height: calc(100vh - 200px);
+    padding: 40px 10px;
+}
+
+main table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+main table td {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+
+i,
+ion-icon {
+    font-size: 3rem;
+}
+
+table .icon {
+    display: grid;
+    justify-content: center;
+}
+
+table .icon div {
+    display: flex;
+    justify-content: center;
+}
+
+#textura {
+    background-image: url(../imagenes/SVG/textura.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    opacity: 50%;
+    pointer-events: none;
+    z-index: 2500;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.agregar-producto {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.agregar-producto label {
+    background-color: #008cd8;
+    color: #fff;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.agregar-producto label:hover {
+    box-shadow: 1px 0px 5px #333;
+    cursor: pointer;
 }
