@@ -32,6 +32,7 @@ if(!empty($_SESSION['aceptado'])){
         <a href="./historial.php">Historial de pedidos</a>
         <?php
         esadmin('<a href="administrar-productos.php">Administrar productos</a>');
+        esadmin('<a href="administrar-pedidos.php">Administrar pedidos</a>');
 
         ?>
         </div>
@@ -68,7 +69,7 @@ if(!empty($_SESSION['aceptado'])){
            
             </div>
             <div class="filtro" >
-            <a onclick="redirigir('identificador1')"  class="texto1" id="texto1">Ver productos relacionados con fútbol</a>
+            <a class="texto1" id="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
                     <button onclick="changeVideo(0)" class="circulo activo" style="background-image: url('imagenes/SVG/futbol.svg');"></button>
                     <button onclick="changeVideo(1)" class="circulo" style="background-image: url('imagenes/SVG/basket.svg');"></button>

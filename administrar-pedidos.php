@@ -16,9 +16,9 @@
         <div class="contenidohistorial productos">
         <?php
             include "./codigophp/verificacion.php";
-            solousuarios();
+            soloadmin();
             include "./codigophp/obtenerhistorial.php";
-            verTodasLasFacturas();
+            facturasadmin();
 
         ?>
         </div>   

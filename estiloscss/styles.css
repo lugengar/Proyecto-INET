@@ -518,8 +518,41 @@ input[type="submit"] {
     pointer-events: none;
     z-index: 2500;
 }
+.contenidohistorial .universidad p,.contenidohistorial .universidad details{
+    width: 100%;
+}
+.contenidohistorial h1{
+    width: 100%;
+    color: white;
+    font-size: 3dvh;
+    text-align: center;
+}
+.contenidohistorial .universidad details summary{
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2dvh;
+
+}
+.contenidohistorial .universidad button{
+    background-color: #333333;
+    color: white;
+    border: none;
+    height: 5dvh;
+    padding: 1dvh;
+    border-radius: 25dvh;
+}
+.contenidohistorial .universidad button.celeste{
+    background-color: #75AADB;
+    color: white;
+    border: none;
+    height: 5dvh;
+    padding: 1dvh;
+    border-radius: 25dvh;
+}
 
 .texto1 {
+    text-decoration: none;
     font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;

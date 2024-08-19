@@ -8,6 +8,9 @@ const deportes = [
 "fútbol",'basket',
     'tenis'
 ];
+const orden = [
+    4,3,1
+]
 let currentVideoIndex = 0;
 let currentPlayer = 1;
 
@@ -15,6 +18,7 @@ const videoPlayer1 = document.getElementById('videoPlayer1');
 const videoPlayer2 = document.getElementById('videoPlayer2');
 const texto = document.getElementById('texto1');
 const buttons = document.querySelectorAll('.circulo');
+texto.href = "./index.php?busqueda=&categoria="+orden[0]+"#identificador2"
 
 function changeVideo(index) {
     currentVideoIndex = index;
@@ -59,6 +63,7 @@ function updateActiveButton(index) {
     buttons.forEach((button, i) => {
         if (i === index) {
             texto.textContent = "Ver productos relacionados con "+deportes[i]
+            texto.href = "./index.php?busqueda=&categoria="+orden[i]+"#identificador2"
             button.classList.add('activo');
         } else {
             button.classList.remove('activo');

@@ -58,19 +58,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Vincular parámetros a la consulta preparada
             $stmt->bind_param("sssss", $nombre, $apellido, $contrasenia_encriptada, $correo, $direccion);
-            if (!empty($_SESSION['pedido'])) {
-                $_SESSION['jerarquia'] = $jerarquia;
-                $_SESSION['nombre'] = $nombre;
-                $_SESSION['id_usuario'] = $id_usuario;
-            }else{
-                session_unset();
-                $_SESSION['jerarquia'] = $jerarquia;
-                $_SESSION['nombre'] = $nombre;
-                $_SESSION['id_usuario'] = $id_usuario;
-                $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
-            }
+            
             // Ejecutar la consulta
             if ($stmt->execute()) {
+                $stmt = $conexion->prepare("SELECT jerarquia, id_usuario FROM usuario WHERE correo = ? AND contrasenia = ?");
+                $stmt->bind_param("ss", $correo, $contrasenia_encriptada);
+
+                // Ejecutar la consulta
+                $stmt->execute();
+                $result2 = $stmt->get_result();
+
+                if ($result2 && $result2->num_rows > 0) {
+                    foreach ($result2 as $index => $row2) {
+                        if (!empty($_SESSION['pedido'])) {
+                            $_SESSION['jerarquia'] = $row2["jerarquia"];
+                            $_SESSION['nombre'] = $nombre;
+                            $_SESSION['id_usuario'] = $row2["id_usuario"];
+                        }else{
+                            session_unset();
+                            $_SESSION['jerarquia'] = $row2["jerarquia"];
+                            $_SESSION['nombre'] = $nombre;
+                            $_SESSION['id_usuario'] = $row2["id_usuario"];
+                            $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
+                        }
+                    }
+                }
+                
                 header("location: ../index.php");
             } else {
                 echo "Hubo un error al guardar los datos: " . $stmt->error;
