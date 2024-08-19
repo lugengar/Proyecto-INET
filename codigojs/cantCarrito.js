@@ -17,7 +17,7 @@ plus.addEventListener('click', () => {
 });
 minus.addEventListener('click', () => {
     conta -= 1;
-    if (conta >= 0){
+    if (conta <= 1){
         conta = 1;
     }
     cant.value = conta;

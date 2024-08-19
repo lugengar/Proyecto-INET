@@ -162,6 +162,29 @@ body footer{
 }
 .aniadir-producto{
     grid-area: "aniadir";
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+.cant-aniadir{
+    display: flex;
+}
+.cant-aniadir .btn-aniadir{
+    background-color: #e4e4e4;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+.cant-aniadir input{
+    width: 70px;
+    height: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #000;
+    font-size: 1.5rem;
 }
 .boton-producto {
     display: flex;
@@ -169,7 +192,8 @@ body footer{
 
     background-color: rgb(0, 164, 229);
     width: max-content;
-    padding: 0 10px;
+    border: none;
+    padding: 5px 10px;
     border-radius: 10px;
     text-decoration: none;
     color: #fff;

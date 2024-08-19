@@ -34,10 +34,10 @@
             <p class="precio-producto">$<?php echo $precio; ?></p>
             <div class="aniadir-producto">
                 <div class="cant-aniadir">
-                    <div id="minus"><i class="fa-solid fa-minus"></i></div>
+                    <div class="btn-aniadir" id="minus"><i class="fa-solid fa-minus"></i></div>
                     <input type="hidden" name="max" id="max" value="<?php echo $stock; ?>">
                     <input type="number" name="cant-producto" id="cant-producto" value="" ReadOnly>
-                    <div id="plus"><i class="fa-solid fa-plus"></i></div>
+                    <div class="btn-aniadir" id="plus"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <button type="submit" name="enviar" value="añadir" class="boton-producto">Añxadir al carrito</button>
             </div>
