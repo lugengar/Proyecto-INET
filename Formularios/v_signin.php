@@ -31,24 +31,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = sanitizarEntrada($_POST['correo'], $conexion);
     $contrasenia = sanitizarEntrada($_POST['contrasenia'], $conexion);
 
-    $stmt = $conexion->prepare("SELECT id_usuario, nombre, jerarquia, contrasenia FROM usuario WHERE correo = ?");
+    $stmt = $conexion->prepare("SELECT id_usuario, nombre, apellido, direccion, jerarquia, contrasenia FROM usuario WHERE correo = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id_usuario,$nombre,$jerarquia,$contrasenia_encriptada);
+        $stmt->bind_result($id_usuario,$nombre,$apellido,$direccion,$jerarquia,$contrasenia_encriptada);
         $stmt->fetch();
 
         if (password_verify($contrasenia, $contrasenia_encriptada)) {
             if (!empty($_SESSION['pedido'])) {
                 $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['direccion'] = $direccion;
                 $_SESSION['nombre'] = $nombre;
+                $_SESSION['apellido'] = $apellido;
                 $_SESSION['id_usuario'] = $id_usuario;
             }else{
                 session_unset();
                 $_SESSION['jerarquia'] = $jerarquia;
+                $_SESSION['direccion'] = $direccion;
                 $_SESSION['nombre'] = $nombre;
+                $_SESSION['apellido'] = $apellido;
                 $_SESSION['id_usuario'] = $id_usuario;
                 $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
             }

@@ -26,10 +26,11 @@ if(!empty($_SESSION['aceptado'])){
 <div id="textura"></div>
 <div class="container" >
     <div id="barralateral" class="barralateral">
-        <a class="botonsalir" onclick="closeMenu()">&times;</a>
+        <a class="botonsalir" onclick="closeMenu()">Atras &times;</a>
         <div class="contenidobarra">
         <a href="./Formularios/resetuser.php">Cerrar sesion</a>
         <a href="./historial.php">Historial de pedidos</a>
+        <a href="./Formularios/editarinfo.php">Editar información</a>
         <?php
         esadmin('<a href="administrar-productos.php">Administrar productos</a>');
         esadmin('<a href="administrar-pedidos.php">Administrar pedidos</a>');
@@ -39,7 +40,7 @@ if(!empty($_SESSION['aceptado'])){
     </div>
 
     <form id="barracarrito" class="barralateral carro" action="./codigophp/productos.php" method="post">
-        <a class="botonsalir" onclick="closeMenu2()">&times;</a>
+        <a class="botonsalir" onclick="closeMenu2()">Atras &times;</a>
         <div class="contenidobarra">
         <?php
             productosdelcarrito();

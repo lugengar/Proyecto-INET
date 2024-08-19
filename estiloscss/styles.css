@@ -220,7 +220,13 @@ input[type="submit"] {
     color: white;
     background-color: transparent;
     border: none;
-    font-size: 6dvh;
+    font-size: 3dvh;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenidobarra {
@@ -273,7 +279,7 @@ input[type="submit"] {
         ". ."
     ;
     grid-template-rows: 8dvh auto 4dvh;
-    grid-template-columns: auto 8dvh;
+    grid-template-columns: auto 15dvh;
 
     background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
     background-position: left bottom, right top;
@@ -288,7 +294,7 @@ input[type="submit"] {
         ". BTN1"
     ;
     grid-template-rows: 8dvh auto 8dvh;
-    grid-template-columns: auto 8dvh;
+    grid-template-columns: auto 15dvh;
 }
 
 .pagar {
