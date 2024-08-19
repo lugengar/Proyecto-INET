@@ -11,7 +11,7 @@ if(!empty($_SESSION['pedido'])){
     $productos_pedidos = json_encode($_SESSION['pedido']);
 
     // Preparar la consulta SQL con placeholders sin comillas
-    $stmt = $conn->prepare("INSERT INTO pedidos (estado, fecha_entrega, productos_pedido, fk_usuario, total) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO pedidos (estado, fecha_entrega, productos_pedido, fk_usuario, precio_total) VALUES (?, ?, ?, ?, ?)");
 
     // Vincular los parámetros con tipos correctos
     $stmt->bind_param("sssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total']);
@@ -20,7 +20,7 @@ if(!empty($_SESSION['pedido'])){
     // Limpiar el carrito de compras
 
     $_SESSION["aceptado"] = true;
-    $_SESSION['pedido'] = ["productos" => [],"cantidad" => []];
+    $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
 
     // Cerrar la declaración y la conexión
     }

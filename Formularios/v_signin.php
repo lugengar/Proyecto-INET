@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['jerarquia'] = $jerarquia;
                 $_SESSION['nombre'] = $nombre;
                 $_SESSION['id_usuario'] = $id_usuario;
-                $_SESSION['pedido'] = ["productos" => [],"cantidad" => []];
+                $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
             }
            header("location: ../index.php");
         } else {

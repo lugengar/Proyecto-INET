@@ -34,6 +34,7 @@
             <p class="precio-producto">$<?php echo $precio; ?></p>
             <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
             <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
+            <?php echo '<input type="hidden" name="precio" value="'.$precio.'">'; ?>
             <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
 
             <div class="marca-producto">
