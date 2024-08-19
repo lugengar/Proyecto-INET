@@ -214,7 +214,9 @@ input[type="submit"] {
     grid-template-columns: 8dvh auto 10dvh;
     padding-right: 1dvh;
 }
-
+details iframe{
+    width: 98%;
+}
 .botonsalir {
     grid-area: BTN1;
     color: white;

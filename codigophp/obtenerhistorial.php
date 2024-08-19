@@ -1,5 +1,6 @@
 <?php
 include "./codigophp/conexionbs.php";
+include "./codigophp/construccion.php";
 
 function verTodasLasFacturas() {
     global $conn;
@@ -32,7 +33,9 @@ function verTodasLasFacturas() {
                 } else {
                     echo "Error al obtener los productos para el pedido ID " . $row['id_pedido'] . "<br>";
                 }
-                echo "</details>";
+                echo "</details><details > <summary>Dirección: </summary>";
+                echo "<iframe src='".crearmapa($_SESSION["direccion"])."'> </iframe>";
+                echo "<p>" . $_SESSION['direccion'] . "</p><div class='barraseparadora'></div></details>";
                 
                 echo "<p>Fecha del pedido: " . $row['fecha_pedido'] . "</p>";
                 echo "<p>Total: $" . $row['precio_total'] . "</p>";
@@ -90,8 +93,9 @@ function facturasadmin() {
                 } else {
                     echo "Error al obtener los productos para el pedido ID " . $row['id_pedido'] . "<br>";
                 }
-                echo "</details>";
-                
+                echo "</details><details > <summary>Dirección: </summary>";
+                echo "<iframe src='".crearmapa($_SESSION["direccion"])."'> </iframe>";
+                echo "<p>" . $_SESSION['direccion'] . "</p><div class='barraseparadora'></div></details>";
                 echo "<p>Fecha del pedido: " . $row['fecha_pedido'] . "</p>";
                 echo "<p>Total: $" . $row['precio_total'] . "</p>";
                 echo "<p>Método de pago: " . $row['metodo_pago'] . "</p>";
