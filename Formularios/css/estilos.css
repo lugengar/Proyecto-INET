@@ -61,18 +61,7 @@ input[type="submit"] {
     pointer-events: none;
     z-index: 1000;
 }
-*{
-    background-color: red;
-}
-.confetti {
-    width: 10px;
-    height: 20px;
-    background-color: red;
-    position: absolute;
-    opacity: 0;
-    animation: confettiFall linear infinite;
 
-}
 
 @keyframes confettiFall {
     0% {
