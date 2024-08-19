@@ -18,11 +18,11 @@
 </head>
 
 <body>
-    <div id="textura"></div>
     <header>
         <img src="imagenes/SVG/logo.svg" alt="">
         <h1>ADMINISTRAR PRODUCTOS</h1>
     </header>
+    <div id="textura"></div>
     <input type="checkbox" name="add" id="add">
     <main>
         <div class="agregar-producto"><label for="add">Agregar otro producto</label></div>
@@ -109,8 +109,8 @@
             <tr>
                 <td class="icon"><div><?php echo $icon; ?></div><p><?php echo $categoria; ?></p></td>
                 <td><?php echo $nombre_producto?></td>
-                <td><a href="#">Editar</a></td>
-                <td><a href="codigophp/borrarproducto.php?delete=<?php echo $id;?>">Eliminar</a></td>
+                <td><a href="actualizar_producto.php?actualizar=<?php echo $id; ?>">Editar</a></td>
+                <td><a href="codigophp/borrarproducto.php?delete=<?php echo $id; ?>">Eliminar</a></td>
             </tr>
         <?php 
             }

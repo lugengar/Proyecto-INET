@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+footer p {
+    font-size: 2.2dvh !important;
+}
+
 footer {
     background-color: #333333;
     width: 100%;
