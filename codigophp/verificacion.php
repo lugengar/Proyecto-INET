@@ -24,7 +24,7 @@ function soloadmin($url= null){
             header("Location: index.php");
         }
         
-    }else if(!empty($_SESSION['jerarquia'])){
+    }else if(empty($_SESSION['jerarquia'])){
         if($url != null){
             header("Location: ".$url."/index.php");
         }else{
