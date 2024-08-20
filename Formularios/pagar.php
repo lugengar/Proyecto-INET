@@ -51,7 +51,7 @@ include "../codigophp/conexionbs.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de pago</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../estiloscss/formularios.css">
 
 </head>
 <div id="textura"></div>
