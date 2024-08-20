@@ -39,7 +39,7 @@
                     <input type="number" name="cant-producto" id="cant-producto" value="" ReadOnly>
                     <div class="btn-aniadir" id="plus"><i class="fa-solid fa-plus"></i></div>
                 </div>
-                <button type="submit" name="enviar" value="añadir" class="boton-producto">Añxadir al carrito</button>
+                <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
             </div>
             <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
             <?php echo '<input type="hidden" name="precio" value="'.$precio.'">'; ?>

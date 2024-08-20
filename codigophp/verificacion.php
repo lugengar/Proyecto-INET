@@ -7,14 +7,16 @@ function esusuario($si,$no){
         echo $no;
     }
 }
-function solousuarios($url){
-    if($url != null){
-        header("Location: ".$url."/index.php");
-    }else{
-        header("Location: index.php");
+function solousuarios($url= null){
+    if(empty($_SESSION['id_usuario'])){
+        if($url != null){
+            header("Location: ".$url."/index.php");
+        }else{
+            header("Location: index.php");
+        }
     }
 }
-function soloadmin($url){
+function soloadmin($url= null){
     if(empty($_SESSION['id_usuario'])){
         if($url != null){
             header("Location: ".$url."/index.php");
