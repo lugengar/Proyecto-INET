@@ -7,17 +7,25 @@ function esusuario($si,$no){
         echo $no;
     }
 }
-function solousuarios(){
-    if(empty($_SESSION['id_usuario'])){
+function solousuarios($url){
+    if($url != null){
+        header("Location: ".$url."/index.php");
+    }else{
         header("Location: index.php");
     }
 }
-function soloadmin(){
+function soloadmin($url){
     if(empty($_SESSION['id_usuario'])){
-        header("Location: index.php");
+        if($url != null){
+            header("Location: ".$url."/index.php");
+        }else{
+            header("Location: index.php");
+        }
         
     }else if(!empty($_SESSION['jerarquia'])){
-        if($_SESSION['jerarquia'] != "vendedor"){
+        if($url != null){
+            header("Location: ".$url."/index.php");
+        }else{
             header("Location: index.php");
         }
     }

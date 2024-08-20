@@ -29,7 +29,7 @@ button:hover {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    left: 2dvh;
+    right: 2dvh;
     top: 2dvh;
 }
 

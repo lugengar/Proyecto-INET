@@ -1,6 +1,6 @@
 <?php
 include "../codigophp/verificacion.php";
-solousuarios();  
+solousuarios("..");  
 
 include "../codigophp/conexionbs.php";
 
