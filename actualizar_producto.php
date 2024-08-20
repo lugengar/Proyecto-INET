@@ -52,22 +52,15 @@ while ($row = $marcas_result->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estiloscss/style.css">
+    <link rel="stylesheet" href="estiloscss/styles.css">
     <link rel="stylesheet" href="estiloscss/administrar.css">
     <title>Editar Producto</title>
-    <style>
-        #descripcion2{
-            resize: none;
-            width: 100%;
-            height: 100px;
-            padding: 5px;
-        }
-    </style>
 </head>
 <body>
     <header>
         <img src="imagenes/logo.svg" alt="">
         <h1>Editar Producto</h1>
+        <a class="logocarrusel2" href="./index.php"></a>
     </header>
     <div id="textura"></div>
         <main class="actualizar">

@@ -248,7 +248,12 @@ input[type="checkbox"] {
     box-shadow: 1px 0px 5px #333;
     cursor: pointer;
 }
-
+#descripcion2{
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+}
 
 @media (width < 780px) {
     header {

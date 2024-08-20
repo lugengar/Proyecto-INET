@@ -1,23 +1,13 @@
 <?php
-
-$usuario = "root";
-$password = "";
-$servidor = "localhost";
-$basededatos = "inet";
-
-$conexion = mysqli_connect($servidor, $usuario, $password, $basededatos);
-
-if (!$conexion) {
-    die("Error al conectarse al servidor de la base de datos: " . mysqli_connect_error());
-}
+include "../codigophp/conexionbs.php";
 
 // Función para sanitizar y proteger entradas del formulario
-function sanitizarEntrada($data, $conexion) {
+function sanitizarEntrada($data, $conn) {
     // Eliminar espacios al inicio y final
     $data = trim($data);
     
     // Escapar caracteres especiales para prevenir inyecciones SQL
-    $data = mysqli_real_escape_string($conexion, $data);
+    $data = mysqli_real_escape_string($conn, $data);
     
     // Convertir caracteres especiales a entidades HTML
     $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
@@ -28,10 +18,10 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir y sanitizar los datos del formulario
-    $correo = sanitizarEntrada($_POST['correo'], $conexion);
-    $contrasenia = sanitizarEntrada($_POST['contrasenia'], $conexion);
+    $correo = sanitizarEntrada($_POST['correo'], $conn);
+    $contrasenia = sanitizarEntrada($_POST['contrasenia'], $conn);
 
-    $stmt = $conexion->prepare("SELECT id_usuario, nombre, apellido, direccion, jerarquia, contrasenia FROM usuario WHERE correo = ?");
+    $stmt = $conn->prepare("SELECT id_usuario, nombre, apellido, direccion, jerarquia, contrasenia FROM usuario WHERE correo = ?");
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $stmt->store_result();
@@ -65,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $stmt->close();
-    $conexion->close();
+    $conn->close();
 }
 
 ?>

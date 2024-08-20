@@ -1,23 +1,13 @@
 <?php
 
-$usuario = "root";
-$password = "";
-$servidor = "localhost";
-$basededatos = "inet";
-
-$conexion = mysqli_connect($servidor, $usuario, $password, $basededatos);
-
-if (!$conexion) {
-    die("Error al conectarse al servidor de la base de datos: " . mysqli_connect_error());
-}
-
+include "../codigophp/conexionbs.php";
 // Función para sanitizar y proteger entradas del formulario
-function sanitizarEntrada($data, $conexion) {
+function sanitizarEntrada($data, $conn) {
     // Eliminar espacios al inicio y final
     $data = trim($data);
     
     // Escapar caracteres especiales para prevenir inyecciones SQL
-    $data = mysqli_real_escape_string($conexion, $data);
+    $data = mysqli_real_escape_string($conn, $data);
     
     // Convertir caracteres especiales a entidades HTML
     $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
@@ -28,17 +18,17 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recibir y sanitizar los datos del formulario
-    $nombre = sanitizarEntrada($_POST['nombre'], $conexion);
-    $apellido = sanitizarEntrada($_POST['apellido'], $conexion);
-    $contrasenia = sanitizarEntrada($_POST['contrasenia'], $conexion);
-    $confirmar_contrasenia = sanitizarEntrada($_POST['confirmar_contrasenia'], $conexion);
-    $correo = sanitizarEntrada($_POST['correo'], $conexion);
-    $direccion = sanitizarEntrada($_POST['direccion'], $conexion);
+    $nombre = sanitizarEntrada($_POST['nombre'], $conn);
+    $apellido = sanitizarEntrada($_POST['apellido'], $conn);
+    $contrasenia = sanitizarEntrada($_POST['contrasenia'], $conn);
+    $confirmar_contrasenia = sanitizarEntrada($_POST['confirmar_contrasenia'], $conn);
+    $correo = sanitizarEntrada($_POST['correo'], $conn);
+    $direccion = sanitizarEntrada($_POST['direccion'], $conn);
 
     if ($contrasenia !== $confirmar_contrasenia) {
         echo "<p class='error_contra'>Las contraseñas no coinciden. Por favor, inténtelo de nuevo.</p>";
     } else {
-        $stmt = $conexion->prepare("SELECT id_usuario FROM usuario WHERE correo = ?");
+        $stmt = $conn->prepare("SELECT id_usuario FROM usuario WHERE correo = ?");
         $stmt->bind_param("s", $correo);
         $stmt->execute();
         $stmt->store_result();
@@ -50,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $contrasenia_encriptada = password_hash($contrasenia, PASSWORD_DEFAULT);
 
             // Preparar la consulta SQL usando sentencias preparadas para mayor seguridad
-            $stmt = $conexion->prepare("INSERT INTO usuario (nombre, apellido, contrasenia, correo, direccion) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO usuario (nombre, apellido, contrasenia, correo, direccion) VALUES (?, ?, ?, ?, ?)");
 
             if ($stmt === false) {
-                die("Error al preparar la consulta: " . $conexion->error);
+                die("Error al preparar la consulta: " . $conn->error);
             }
 
             // Vincular parámetros a la consulta preparada
@@ -61,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // Ejecutar la consulta
             if ($stmt->execute()) {
-                $stmt = $conexion->prepare("SELECT jerarquia, id_usuario FROM usuario WHERE correo = ? AND contrasenia = ?");
+                $stmt = $conn->prepare("SELECT jerarquia, id_usuario FROM usuario WHERE correo = ? AND contrasenia = ?");
                 $stmt->bind_param("ss", $correo, $contrasenia_encriptada);
 
                 // Ejecutar la consulta
@@ -92,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt->close();
     }
-    $conexion->close();
+    $conn->close();
 }
 
 ?>

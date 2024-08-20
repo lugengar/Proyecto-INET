@@ -19,6 +19,7 @@
     <header>
         <img src="imagenes/logo.svg" alt="">
         <h1>ADMINISTRAR PRODUCTOS</h1>
+        <a class="logocarrusel2" href="./index.php"></a>
     </header>
     <div id="textura"></div>
     <input type="checkbox" name="add" id="add">
