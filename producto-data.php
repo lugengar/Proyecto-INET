@@ -43,7 +43,6 @@
             </div>
             <?php echo '<input type="hidden" name="id_producto" value="'.$id_producto.'">'; ?>
             <?php echo '<input type="hidden" name="precio" value="'.$precio.'">'; ?>
-            <?php echo '<input type="hidden" name="cantidad" value="1">'; ?>
 
             <div class="marca-producto">
                 <p class="bold">Marca:</p>
