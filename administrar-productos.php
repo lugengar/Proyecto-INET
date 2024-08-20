@@ -107,8 +107,7 @@
             <tr>
                 <td class="icon"><div><?php echo $icon; ?></div><p><?php echo $categoria; ?></p></td>
                 <td><?php echo $nombre_producto?></td>
-                <td><a href="actualizar_producto.php?actualizar=<?php echo $id; ?>">Editar</a></td>
-                <td><a href="codigophp/borrarproducto.php?delete=<?php echo $id; ?>">Eliminar</a></td>
+                <td class="botonesUD"><a href="actualizar_producto.php?actualizar=<?php echo $id; ?>">Editar</a><a href="codigophp/borrarproducto.php?delete=<?php echo $id; ?>">Eliminar</a></td>
             </tr>
         <?php 
             }

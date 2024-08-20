@@ -200,8 +200,8 @@ main table td {
     padding: 10px;
 }
 
-i,
-ion-icon {
+table i,
+table ion-icon {
     font-size: 3rem;
 }
 
@@ -214,14 +214,22 @@ table .icon div {
     display: flex;
     justify-content: center;
 }
-
-
+table p{
+    text-align: center;
+}
+table th{
+    font-family: "Russo One", sans-serif;
+    font-size: 1.6rem;
+}
+.botonesUD a{
+    padding-left: 20px;
+}
 input[type="checkbox"] {
     display: none;
 }
 
 .agregar-producto {
-    margin: 20px;
+    margin: 30px 0px;
     display: flex;
     justify-content: center;
 }
@@ -239,4 +247,43 @@ input[type="checkbox"] {
 .agregar-producto label:hover {
     box-shadow: 1px 0px 5px #333;
     cursor: pointer;
+}
+
+
+@media (width < 780px) {
+    header {
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    header h1 {
+        font-size: 1.3rem;
+        width: min-content;
+    }
+}
+@media (width < 560px) {   
+    table i,
+    table ion-icon {
+        font-size: 2rem;
+    }
+    table th{
+        font-family: "Russo One", sans-serif;
+        font-size: 1.2rem;
+    }
+    .botonesUD a{
+        display: grid;
+        text-align: center;
+        font-size: .8rem;
+    }
+
+
+    main.actualizar {
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 2dvh;
+        gap: 40px;
+    }
+    main.actualizar p:not(.bold){
+        font-size: .8rem;
+    }
 }
