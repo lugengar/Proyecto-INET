@@ -2,7 +2,7 @@
 
 //ESTE ARCHIVO SE ENCARGA DE CONSTRUIR EL DISEÑO RECIBIENDO LOS DATOS DE LA BDD
 
-$direccionimagen = "./imagenes/otros/";
+$direccionimagen = "./imagenes/";
 
 
 function producto($id, $icon, $nombre, $precio, $cantidad_disponible){ //CREA EL CUADRO DE UNIVERSIDAD

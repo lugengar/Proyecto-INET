@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <img src="imagenes/SVG/logo.svg" alt="">
+        <img src="imagenes/logo.svg" alt="">
         <h1>ADMINISTRAR PRODUCTOS</h1>
     </header>
     <div id="textura"></div>

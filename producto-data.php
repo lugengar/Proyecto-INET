@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagenes/SVG/icono.svg" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="imagenes/icono.svg" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="estiloscss/producto-data.css">
     <title><?php echo $nombre_producto; ?> | Podium</title>
 </head>

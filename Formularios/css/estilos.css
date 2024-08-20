@@ -80,7 +80,7 @@ input[type="submit"] {
     width: 6dvh;
     height: 6dvh;
 
-    background-image: url(../../imagenes/iconos/casa.svg);
+    background-image: url(../../imagenes/casa.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -110,7 +110,7 @@ button {
     width: 10dvh;
     height: 10dvh;
 
-    background-image: url(../../imagenes/SVG/logo.svg);
+    background-image: url(../../imagenes/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -121,7 +121,7 @@ button {
 
 #textura {
 
-    background-image: url(../../imagenes/SVG/textura.svg);
+    background-image: url(../../imagenes/textura.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -66,7 +66,7 @@ while ($row = $marcas_result->fetch_assoc()) {
 </head>
 <body>
     <header>
-        <img src="imagenes/SVG/logo.svg" alt="">
+        <img src="imagenes/logo.svg" alt="">
         <h1>Editar Producto</h1>
     </header>
     <div id="textura"></div>

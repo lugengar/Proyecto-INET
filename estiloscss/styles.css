@@ -283,7 +283,7 @@ details iframe{
     grid-template-rows: 8dvh auto 4dvh;
     grid-template-columns: auto 15dvh;
 
-    background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
+    background-image: url(../imagenes/mancha.svg), url(../imagenes/mancha2.svg);
     background-position: left bottom, right top;
     background-repeat: no-repeat;
     background-size: 30dvh;
@@ -328,7 +328,7 @@ details iframe{
     height: 8dvh;
     background-color: #333333;
     border-radius: 25dvh;
-    background-image: url(../imagenes/SVG/carrito.svg);
+    background-image: url(../imagenes/carrito.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 5dvh;
@@ -372,7 +372,7 @@ details iframe{
     text-align: left;
     padding-top: 0.4dvh;
     position: relative;
-    background-image: url(../imagenes/SVG/persona.svg);
+    background-image: url(../imagenes/persona.svg);
     background-size: 5dvh;
     background-repeat: no-repeat;
     background-position: right;
@@ -403,7 +403,7 @@ details iframe{
 .logo {
     transition: opacity 0.2s;
     grid-area: LOG;
-    background-image: url(../imagenes/SVG/logo.svg);
+    background-image: url(../imagenes/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -413,7 +413,7 @@ details iframe{
     width: 10dvh;
     height: 10dvh;
 
-    background-image: url(../imagenes/SVG/logo.svg);
+    background-image: url(../imagenes/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -514,7 +514,7 @@ details iframe{
 }
 
 #textura {
-    background-image: url(../imagenes/SVG/textura.svg);
+    background-image: url(../imagenes/textura.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -574,7 +574,7 @@ details iframe{
     display: flex;
     color: white;
     grid-area: TEXT1;
-    background-image: url(../imagenes/SVG/estrellas.svg);
+    background-image: url(../imagenes/estrellas.svg);
     background-size: 12dvh;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -608,7 +608,7 @@ details iframe{
     width: 30dvh;
     height: 100%;
     background-color: white;
-    background-image: url(../imagenes/otros/logo-pba-desktop.png);
+    background-image: url(../imagenes/logo-pba-desktop.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
@@ -646,7 +646,7 @@ details iframe{
     align-items: center;
     gap: 5dvh;
     flex-wrap: wrap;
-    background-image: url(../imagenes/SVG/mancha.svg), url(../imagenes/SVG/mancha2.svg);
+    background-image: url(../imagenes/mancha.svg), url(../imagenes/mancha2.svg);
     background-position: left bottom, right top;
     background-repeat: no-repeat;
     background-size: 50dvh;
@@ -962,7 +962,7 @@ details iframe{
 
 .footer .logo_pba_vertical2 {
     grid-area: LOG;
-    background-image: url(../imagenes/SVG/logo);
+    background-image: url(../imagenes/logo);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1074,7 +1074,7 @@ body.inactive .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../imagenes/iconos/equis.svg);
+    background-image: url(../imagenes/equis.svg);
     background-position: 0.8dvh 1dvh;
     background-repeat: no-repeat;
     background-size: 1dvh;
@@ -1228,7 +1228,7 @@ body.inactive .overlay {
     width: 6dvh;
     height: 6dvh;
 
-    background-image: url(../imagenes/iconos/casa.svg);
+    background-image: url(../imagenes/casa.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

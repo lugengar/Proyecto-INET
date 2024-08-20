@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estiloscss/styles.css">
-    <link rel="icon" href="imagenes/SVG/icono.svg" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="imagenes/icono.svg" type="image/vnd.microsoft.icon">
     <title>Podium</title>
     <meta name="description" content="Podium">
 </head>
@@ -72,9 +72,9 @@ if(!empty($_SESSION['aceptado'])){
             <div class="filtro" >
             <a class="texto1" id="texto1">Ver productos relacionados con fútbol</a>
                 <div class="circulos">
-                    <button onclick="changeVideo(0)" class="circulo activo" style="background-image: url('imagenes/SVG/futbol.svg');"></button>
-                    <button onclick="changeVideo(1)" class="circulo" style="background-image: url('imagenes/SVG/basket.svg');"></button>
-                    <button onclick="changeVideo(2)" class="circulo" style="background-image: url('imagenes/SVG/tenis.svg');"></button>
+                    <button onclick="changeVideo(0)" class="circulo activo" style="background-image: url('imagenes/futbol.svg');"></button>
+                    <button onclick="changeVideo(1)" class="circulo" style="background-image: url('imagenes/basket.svg');"></button>
+                    <button onclick="changeVideo(2)" class="circulo" style="background-image: url('imagenes/tenis.svg');"></button>
                    
                 </div>
             </div>
@@ -88,7 +88,7 @@ if(!empty($_SESSION['aceptado'])){
             <form class="barradebusqueda activo" id="barra" method="GET" action="./index.php#identificador2">
                 <div>
                     <input type="text" name="busqueda" placeholder="¿Que producto busca?" required>
-                    <input type="submit" value="" style="background-image: url(imagenes/SVG/lupa.svg);">
+                    <input type="submit" value="" style="background-image: url(imagenes/lupa.svg);">
                 </div>
                 
                 <select name="categoria" id="tipo" value="">
@@ -112,7 +112,7 @@ if(!empty($_SESSION['aceptado'])){
                
             </div>
             <div class="barradebusqueda volverarriba">
-                <img src="imagenes/iconos/flecha.svg" alt="">
+                <img src="imagenes/flecha.svg" alt="">
                 <button onclick="redirigir('identificador1')" >Volver arriba</button>
             </div>
         </main>
