@@ -55,7 +55,7 @@
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <label for="fk_marca">Seleccione la categoria:</label>
+                <label for="fk_marca">Seleccione la marca:</label>
                 <select id="fk_marca" name="fk_marca" required>
                     <option value="">Selecciona un producto</option>
                     <?php foreach ($marcas as $marca): ?>
