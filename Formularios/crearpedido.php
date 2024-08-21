@@ -40,9 +40,22 @@ if(!empty($_SESSION['pedido'])){
     } else {
         echo "Error al actualizar productos: " . $conn->error;
     }
-
+    function traducirMetodoPago($metodo) {
+        $traducciones = [
+            'account_money' => 'Cuenta de Mercado Pago',
+            'credit_card' => 'Tarjeta de crédito',
+            'debit_card' => 'Tarjeta de débito',
+            'prepaid_card' => 'Tarjeta prepaga',
+            'ticket' => 'Boleto',
+            'bank_transfer' => 'Transferencia bancaria',
+            'atm' => 'Cajero automático',
+            'wallet' => 'Billetera virtual',
+        ];
+        return $traducciones[$metodo] ?? $metodo;
+    }
+    
     // Vincular los parámetros con tipos correctos
-    $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total'],$_GET["payment_type"],date('Y-m-d'));
+    $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total'],traducirMetodoPago($_GET["payment_type"]),date('Y-m-d'));
     $stmt->execute();
 
     // Limpiar el carrito de compras
