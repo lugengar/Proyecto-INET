@@ -12,7 +12,7 @@ include "../codigophp/conexionbs.php";
     $client = new PreferenceClient();
     
     $backUrls = [
-        "success" => "http://localhost/Proyecto-INET/index.php"
+        "success" => "https://lugengar.github.io/Proyecto-INET/bypass/index.html"
     ];
     $items = [];
     $total=0;
@@ -39,7 +39,7 @@ include "../codigophp/conexionbs.php";
         "auto_return" => "approved",
         "statement_descriptor" => "PODIUM", 
         "external_reference" => "",
-        "notification_url" => "http://localhost/Proyecto-INET/Formularios/crearpedido.php"
+        //"notification_url" => "http://localhost/Proyecto-INET/Formularios/crearpedido.php"
 
     ]);
     ?>
@@ -85,6 +85,7 @@ const mp = new MercadoPago('APP_USR-73e6ac01-337e-4425-ad81-c97a449906f3', {loca
 mp.bricks().create("wallet", "wallet_container", {
    initialization: {
        preferenceId: '<?php echo $preference->id; ?>',
+       redirectMode: "modal",
    },
 customization: {
  texts: {

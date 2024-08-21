@@ -42,7 +42,7 @@ if(!empty($_SESSION['pedido'])){
     }
 
     // Vincular los parámetros con tipos correctos
-    $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total'],$_GET["payment_id"],date('Y-m-d'));
+    $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total'],$_GET["payment_type"],date('Y-m-d'));
     $stmt->execute();
 
     // Limpiar el carrito de compras
