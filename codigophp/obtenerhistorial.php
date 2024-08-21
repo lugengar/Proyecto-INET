@@ -93,6 +93,7 @@ function facturasadmin() {
                 } else {
                     echo "Error al obtener los productos para el pedido ID " . $row['id_pedido'] . "<br>";
                 }
+                echo "<h1>N - " . $row['id_pedido'] . "</h1>";
                 echo "</details><details > <summary>Dirección: </summary>";
                 echo "<iframe src='".crearmapa($_SESSION["direccion"])."'> </iframe>";
                 echo "<p>" . $_SESSION['direccion'] . "</p><div class='barraseparadora'></div></details>";

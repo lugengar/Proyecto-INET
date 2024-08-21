@@ -85,7 +85,7 @@ const mp = new MercadoPago('APP_USR-73e6ac01-337e-4425-ad81-c97a449906f3', {loca
 mp.bricks().create("wallet", "wallet_container", {
    initialization: {
        preferenceId: '<?php echo $preference->id; ?>',
-       redirectMode: "modal",
+       //redirectMode: "modal",
    },
 customization: {
  texts: {
