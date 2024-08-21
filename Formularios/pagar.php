@@ -12,7 +12,7 @@ include "../codigophp/conexionbs.php";
     $client = new PreferenceClient();
     
     $backUrls = [
-        "success" => "http://localhost/Proyecto-INET/Formularios/crearpedido.php"
+        "success" => "http://localhost/Proyecto-INET/index.php"
     ];
     $items = [];
     $total=0;
@@ -39,6 +39,8 @@ include "../codigophp/conexionbs.php";
         "auto_return" => "approved",
         "statement_descriptor" => "PODIUM", 
         "external_reference" => "",
+        "notification_url" => "http://localhost/Proyecto-INET/Formularios/crearpedido.php"
+
     ]);
     ?>
 
