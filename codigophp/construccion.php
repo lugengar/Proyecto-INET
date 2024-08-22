@@ -22,14 +22,14 @@ function producto($id, $icon, $nombre, $precio, $cantidad_disponible){ //CREA EL
     ');
         }
 }
-function carritoproducto($index, $icon, $nombre, $precio,$cantidad){ //CREA EL CUADRO DE UNIVERSIDAD
+function carritoproducto($index, $icon, $nombre, $precio,$cantidad,$id){ //CREA EL CUADRO DE UNIVERSIDAD
     global $direccionimagen;
    if($cantidad > 1){ 
         echo('<div class="productocarrito botones2">
                 <h1 class="nombre">'.$nombre." x".$cantidad.'</h1>
                 <p class="precio">Precio: $'.($precio * $cantidad).'</p>
-                <button type="submit" name="enviar" value="bt'.$index.'" class="botonborrar">Eliminar todo &times;</button>
-                <button type="submit" name="enviar" value="bu'.$index.'" class="botonborrar solouno">1 -</button>
+                <button type="submit" name="enviar" value="bt'.$id.'" class="botonborrar">Eliminar todo &times;</button>
+                <button type="submit" name="enviar" value="bu'.$id.'" class="botonborrar solouno">1 -</button>
                 <div class="icono">'.$icon.'</div>
             </div>
         ');
@@ -37,7 +37,7 @@ function carritoproducto($index, $icon, $nombre, $precio,$cantidad){ //CREA EL C
         echo('<div class="productocarrito">
                 <h1 class="nombre">'.$nombre." x".$cantidad.'</h1>
                 <p class="precio">Precio: $'.($precio * $cantidad).'</p>
-                <button type="submit" name="enviar" value="bt'.$index.'" class="botonborrar">Eliminar &times;</button>
+                <button type="submit" name="enviar" value="bt'.$id.'" class="botonborrar">Eliminar &times;</button>
                 <div class="icono">'.$icon.'</div>
             </div>
         ');

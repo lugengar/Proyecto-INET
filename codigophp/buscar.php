@@ -24,15 +24,24 @@ function productosdelcarrito(){
     global $conn;
     if (!empty($_SESSION['pedido'])) {
         if ($_SESSION['pedido']["productos"] != []) {
-            $sql = "SELECT p.*, c.icon FROM producto p INNER JOIN categoria c ON p.fk_categoria = c.id_categoria WHERE p.id_producto IN (" . implode(",",$_SESSION['pedido']['productos']) . ")";
+            $productos = implode(",", $_SESSION['pedido']['productos']);
+            $sql = "
+                SELECT p.*, c.icon 
+                FROM producto p 
+                INNER JOIN categoria c ON p.fk_categoria = c.id_categoria 
+                WHERE p.id_producto IN ($productos)
+                ORDER BY FIELD(p.id_producto, $productos)
+            ";
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows > 0) {
                 foreach ($result as $index => $row) {
-                    carritoproducto($index, $row["icon"],$row["nombre_producto"], $row["precio"],$_SESSION['pedido']['cantidad'][$index]);
+                    carritoproducto($index, $row["icon"],$row["nombre_producto"], $row["precio"],$_SESSION['pedido']['cantidad'][$index], $row["id_producto"]);
                 }
             } 
         }else {
             echo "<h1 id='nada'>NO HAY PRODUCTOS AUN</h1>";
+            $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
+
         }
     } else {
         $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
@@ -62,11 +71,8 @@ function precio(){
 
 }
 function cantidadtotaldeproductos(){
-    $total=0;
-    foreach ($_SESSION['pedido']["cantidad"] as $key => $cantidad) {
-        $total = $total + $cantidad;
-    }
-    echo $total;
+
+    echo count($_SESSION['pedido']["cantidad"]);
 }
 function carruselboton() {
     $url_actual = $_SERVER['REQUEST_URI'];

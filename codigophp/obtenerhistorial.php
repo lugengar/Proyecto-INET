@@ -47,6 +47,8 @@ function verTodasLasFacturas() {
                     echo "<p>Fecha de entrega: " . $row['fecha_entrega'] . "</p>";
                 }
                 echo "<p>Estado: " . $row['estado'] . "</p>";
+                echo "<input type='hidden' name='id_pedido' value='" . $row['id_pedido'] . "'>";
+
                 if($row['estado'] == "entregado"){
                     echo '<button value="borrar" name="envio" type="submit">Eliminar pedido</button>';
                 }/*else if($row['estado'] == "en preparacion"){
@@ -72,16 +74,16 @@ function verTodasLasFacturasviejas() {
  
     if ($result = $conn->query($sql)) {
         if ($result->num_rows > 0) {
-            $haypedidos = true;
-
-            echo "<div class='barraseparadora'></div>";
+            if($haypedidos){
+                echo "<div class='barraseparadora'></div>";
+            }
             while ($row = $result->fetch_assoc()) {
                 $pedido = json_decode($row["productos_pedido"], true);
                 echo '<form class="universidad " method="POST" action="./codigophp/procesarenvio.php">';
 
                 // Verificar que la decodificación JSON fue exitosa
                 if (json_last_error() !== JSON_ERROR_NONE) {
-                    echo "Error al decodificar productos_pedido para el pedido ID " . $row['id_pedido'] . "<br>";
+                    echo "Error al decodificar productos_pedido para el pedido ID " . $row['id_historica'] . "<br>";
                     continue;
                 }
 
@@ -96,7 +98,7 @@ function verTodasLasFacturasviejas() {
                         echo "<div class='barraseparadora'></div>";
                     }
                 } else {
-                    echo "Error al obtener los productos para el pedido ID " . $row['id_pedido'] . "<br>";
+                    echo "Error al obtener los productos para el pedido ID " . $row['id_historica'] . "<br>";
                 }
                 echo "</details><details > <summary>Dirección: </summary>";
                 echo "<iframe src='".crearmapa($_SESSION["direccion"])."'> </iframe>";
@@ -109,6 +111,7 @@ function verTodasLasFacturasviejas() {
                     echo "<p>Fecha de entrega: " . $row['fecha_entrega'] . "</p>";
                 }
                 echo "<p>Estado: " . $row['estado'] . "</p>";
+                echo "<input type='hidden' name='id_pedido' value='" . $row['id_historica'] . "'>";
                 if($row['estado'] == "entregado"){
                     echo '<button value="borrar" name="envio" type="submit">Eliminar pedido</button>';
                 }/*else if($row['estado'] == "en preparacion"){

@@ -17,7 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tipodeboton = $_POST["enviar"];
     
     if ($tipodeboton[0] == "b" && $tipodeboton[1] == "t") {
-        $indice = intval($tipodeboton[2]);
+  
+        preg_match('/\d+/', $tipodeboton, $coincidencias);
+        $indice = array_search((int)$coincidencias[0],$_SESSION['pedido']['productos']);
 
         unset($cantidad[$indice]);
         unset($id_producto[$indice]);
@@ -34,28 +36,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Producto y cantidad eliminados.".$indice;
         header("location: ../index.php#carrito");
     } else if ($tipodeboton[0] == "b" && $tipodeboton[1] == "u") {
-        $indice = intval($tipodeboton[2]);
+        preg_match('/\d+/', $tipodeboton, $coincidencias);
+        $indice = array_search((int)$coincidencias[0],$_SESSION['pedido']['productos']);
+        print_r((int)$coincidencias[0]." ".$indice);
+
+        print_r($_SESSION['pedido']);
         $_SESSION['pedido']['cantidad'][$indice]--;
-        echo "Cantidad disminuida.".$indice;
+
+        print_r($_SESSION['pedido']['cantidad']);
+        print_r($_SESSION['pedido']['productos']);
+
+        echo "Producto y cantidad eliminados.".$indice;
         header("location: ../index.php#carrito");
     } else if ($tipodeboton == "añadir") {
-        $nuevo_id_producto = $_POST['id_producto']; 
+        $id_producto = $_SESSION['pedido']['productos'];
+        $cantidad = $_SESSION['pedido']['cantidad'];
+        $precios = $_SESSION['pedido']['precios'];
+    
+        $nuevo_id_producto =intval( $_POST['id_producto']); 
         $nueva_cantidad = intval($_POST['cant-producto']); 
         $nuevo_precio = intval($_POST['precio']); 
     
-        $indice = array_search($nuevo_id_producto, $id_producto);
+        $indice = array_search($nuevo_id_producto,$id_producto);
     
         if ($indice !== false) {
             $cantidad[$indice] += $nueva_cantidad;
         } else {
-            $id_producto[] = $nuevo_id_producto;
-            $cantidad[] = $nueva_cantidad;
-            $precios[] = $nuevo_precio;
+            array_splice($id_producto,0, 0,$nuevo_id_producto);
+            array_splice($cantidad, 0, 0,$nueva_cantidad);
+            array_splice($precios,0, 0, $nuevo_precio);
         }
     
         $_SESSION['pedido']['productos'] = $id_producto;
         $_SESSION['pedido']['cantidad'] = $cantidad;
         $_SESSION['pedido']['precios'] = $precios;
+
         echo "Producto y cantidad agregados.";
         header("location: ../index.php");
 
