@@ -7,7 +7,7 @@ include "../codigophp/conexionbs.php";
     use MercadoPago\Client\Preference\PreferenceClient;
     use MercadoPago\MercadoPagoConfig;
     require '../vendor/autoload.php';
-    MercadoPagoConfig::setAccessToken("");
+    MercadoPagoConfig::setAccessToken("APP_USR-7854084530284610-081814-ef64e9962983f3b48c4cdc11a75632d7-1950389309");
 
     $client = new PreferenceClient();
     
@@ -81,7 +81,7 @@ include "../codigophp/conexionbs.php";
 </div>
 </body>
 <script>
-const mp = new MercadoPago('', {locale: "es-AR"});
+const mp = new MercadoPago('APP_USR-73e6ac01-337e-4425-ad81-c97a449906f3', {locale: "es-AR"});
 mp.bricks().create("wallet", "wallet_container", {
    initialization: {
        preferenceId: '<?php echo $preference->id; ?>',

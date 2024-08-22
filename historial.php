@@ -19,7 +19,7 @@
             solousuarios();
             include "./codigophp/obtenerhistorial.php";
             verTodasLasFacturas();
-
+            verTodasLasFacturasviejas();
         ?>
         </div>   
         <?php include "footer.html"?>

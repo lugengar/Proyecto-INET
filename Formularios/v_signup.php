@@ -61,14 +61,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($result2 && $result2->num_rows > 0) {
                     foreach ($result2 as $index => $row2) {
                         if (!empty($_SESSION['pedido'])) {
-                            $_SESSION['jerarquia'] = $row2["jerarquia"];
+                            $_SESSION['jerarquia'] = $jerarquia;
+                            $_SESSION['direccion'] = $direccion;
                             $_SESSION['nombre'] = $nombre;
-                            $_SESSION['id_usuario'] = $row2["id_usuario"];
+                            $_SESSION['apellido'] = $apellido;
+                            $_SESSION['id_usuario'] = $id_usuario;
                         }else{
                             session_unset();
-                            $_SESSION['jerarquia'] = $row2["jerarquia"];
+                            $_SESSION['jerarquia'] = $jerarquia;
+                            $_SESSION['direccion'] = $direccion;
                             $_SESSION['nombre'] = $nombre;
-                            $_SESSION['id_usuario'] = $row2["id_usuario"];
+                            $_SESSION['apellido'] = $apellido;
+                            $_SESSION['id_usuario'] = $id_usuario;
                             $_SESSION['pedido'] = ["productos" => [],"cantidad" => [],"precios" => []];
                         }
                     }
