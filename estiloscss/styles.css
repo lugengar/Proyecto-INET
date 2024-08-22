@@ -320,6 +320,10 @@ details iframe{
 }
 
 .carrito {
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 4dvh;
+    color: white;
     position: fixed;
     right: 5dvh;
     bottom: 5dvh;
@@ -329,7 +333,7 @@ details iframe{
     background-color: #333333;
     border-radius: 25dvh;
     background-image: url(../imagenes/carrito.svg);
-    background-position: center;
+    background-position: 1.2dvh 2.5dvh;
     background-repeat: no-repeat;
     background-size: 5dvh;
     z-index: 1050;

@@ -61,6 +61,13 @@ function precio(){
     echo '<a href="'.$nueva_url.'#identificador2">Menor precio</a>';
 
 }
+function cantidadtotaldeproductos(){
+    $total=0;
+    foreach ($_SESSION['pedido']["cantidad"] as $key => $cantidad) {
+        $total = $total + $cantidad;
+    }
+    echo $total;
+}
 function carruselboton() {
     $url_actual = $_SERVER['REQUEST_URI'];
 

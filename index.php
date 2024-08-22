@@ -53,7 +53,7 @@ if(!empty($_SESSION['aceptado'])){
         
     </form>
 
-    <button class="carrito" onclick="openMenu2()"></button>
+    <button class="carrito" onclick="openMenu2()"><?php cantidadtotaldeproductos(); ?></button>
     <header class="header hidden" id="header">
             <a href="index.php" class="logo"></a>
             <?php
