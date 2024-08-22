@@ -36,7 +36,7 @@
                 <div class="cant-aniadir">
                     <div class="btn-aniadir" id="minus"><i class="fa-solid fa-minus"></i></div>
                     <input type="hidden" name="max" id="max" value="<?php echo $stock; ?>">
-                    <input type="number" name="cant-producto"  value="1" >
+                    <input type="number" name="cant-producto" id="cant-producto" min="1" value="1" readOnly>
                     <div class="btn-aniadir" id="plus"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <button type="submit" name="enviar" value="añadir" class="boton-producto">Añadir al carrito</button>
