@@ -48,7 +48,7 @@ if(!empty($_SESSION['aceptado'])){
      
         </div>
         <?php
-            esusuario('<button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>','<a class="pagar" href="./Formularios/signin.php">Pagar</a>');
+            esusuario('<button type="submit" class="pagar" name="enviar" value="pagar">Pagar</button>','<a class="pagar" href="./Formularios/signin.php">Ir a pagar</a>');
         ?>
         
     </form>

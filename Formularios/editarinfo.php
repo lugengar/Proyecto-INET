@@ -20,9 +20,9 @@ session_start();
 <form class="signin" action="./v_editarinfo.php" method="POST">
     <h2>Edición de información </h2>
     <div class="inputs2">
-        <input type="text" name="nombre" placeholder="<?php echo $_SESSION["nombre"]; ?>" required>
-        <input type="text" name="apellido" placeholder="<?php echo $_SESSION["apellido"]; ?>" required>
-        <input type="text" name="direccion" placeholder="<?php echo $_SESSION["direccion"]; ?>" required>
+        <input type="text" name="nombre" placeholder="Nombre: <?php echo $_SESSION["nombre"]; ?>" required>
+        <input type="text" name="apellido" placeholder="Apellido: <?php echo $_SESSION["apellido"]; ?>" required>
+        <input type="text" name="direccion" placeholder="Dirección: <?php echo $_SESSION["direccion"]; ?>" required>
     </div>
     <input type="submit" value="Editar información " class="btn">
 </form>
