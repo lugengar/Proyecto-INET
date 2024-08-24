@@ -2,6 +2,18 @@
 include "./codigophp/conexionbs.php";
 include "./codigophp/construccion.php";
 $haypedidos = false;
+function dividirTexto($texto) {
+    if (strpos($texto, ',') !== false) {
+        $partes = explode(",", $texto);
+
+        $parte1 = trim($partes[0]);
+        $parte2 = trim($partes[1]);
+
+        return [$parte1, $parte2];
+    } else {
+        return [$texto, 'no tiene'];
+    }
+}
 function verTodasLasFacturas() {
     global $conn;
     global $haypedidos;
@@ -42,7 +54,7 @@ function verTodasLasFacturas() {
                 
                 echo "<p>Fecha del pedido: " . $row['fecha_pedido'] . "</p>";
                 echo "<p>Total: $" . $row['precio_total'] . "</p>";
-                echo "<p>Método de pago: " . $row['metodo_pago'] . "</p>";
+                echo "<p>Método de pago: " . dividirTexto($row['metodo_pago'])[0] . "</p>";
                 if($row['estado'] == "entregado"){
                     echo "<p>Fecha de entrega: " . $row['fecha_entrega'] . "</p>";
                 }
@@ -106,7 +118,7 @@ function verTodasLasFacturasviejas() {
                 
                 echo "<p>Fecha del pedido: " . $row['fecha_pedido'] . "</p>";
                 echo "<p>Total: $" . $row['precio_total'] . "</p>";
-                echo "<p>Método de pago: " . $row['metodo_pago'] . "</p>";
+                echo "<p>Método de pago: " . dividirTexto($row['metodo_pago'])[0] . "</p>";
                 if($row['estado'] == "entregado"){
                     echo "<p>Fecha de entrega: " . $row['fecha_entrega'] . "</p>";
                 }
@@ -169,7 +181,8 @@ function facturasadmin() {
                 echo "<p>" . $_SESSION['direccion'] . "</p><div class='barraseparadora'></div></details>";
                 echo "<p>Fecha del pedido: " . $row['fecha_pedido'] . "</p>";
                 echo "<p>Total: $" . $row['precio_total'] . "</p>";
-                echo "<p>Método de pago: " . $row['metodo_pago'] . "</p>";
+                echo "<p>Método de pago: " . dividirTexto($row['metodo_pago'])[0] . "</p>";
+                echo "<p>ID método de pago: " . dividirTexto($row['metodo_pago'])[1] . "</p>";
                 if($row['estado'] == "entregado"){
                     echo "<p>Fecha de entrega: " . $row['fecha_entrega'] . "</p>";
                 }

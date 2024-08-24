@@ -1,5 +1,16 @@
 <?php
+function dividirTexto($texto) {
+    if (strpos($texto, ',') !== false) {
+        $partes = explode(",", $texto);
 
+        $parte1 = trim($partes[0]);
+        $parte2 = trim($partes[1]);
+
+        return [$parte1, $parte2];
+    } else {
+        return [$texto, 'no tiene'];
+    }
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include "./conexionbs.php";
 
@@ -57,13 +68,37 @@ include "./conexionbs.php";
         }  
         header("location: ../historial.php");
     }else if ($tipodeboton == "cancelar"){
-        include "./mercadopago.php";
+        $sql2 = "SELECT * FROM pedidos WHERE id_pedido = ". $id_pedido;
+        $result2 = $conn->query($sql2);
+        
         require_once '../vendor/autoload.php'; 
 
-        MercadoPago\SDK::setAccessToken($credencial1);
+        MercadoPago\SDK::setAccessToken("APP_USR-7854084530284610-081814-ef64e9962983f3b48c4cdc11a75632d7-1950389309");
 
-        $payment_id = '1234567890';
+        $payment_id = '';
+        if ($result2 && $result2->num_rows > 0) {
+            foreach ($result2 as $index => $row) {
+                $estado = "cancelado";
+                $fecha_entrega = null;
+                $productos_pedido = $row["productos_pedido"];
+                $fk_usuario = $row["fk_usuario"];
+                $precio_total = $row['precio_total'];
+                $metodo_pago = $row['metodo_pago']; 
+                $fecha_pedido = $row['fecha_pedido'];
+                $payment_id = dividirTexto($metodo_pago)[1];
+                $stmt = $conn->prepare("INSERT INTO historica (estado, fecha_entrega, productos_pedido, fk_usuario, precio_total, metodo_pago, fecha_pedido) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedido, $fk_usuario, $precio_total, $metodo_pago, $fecha_pedido);
+                $stmt->execute();
+                $stmt->close();
         
+                $sql3 = "DELETE FROM pedidos WHERE id_pedido = ". $id_pedido;
+                if ($conn->query($sql3) === TRUE) {
+                    echo "Pedido eliminado";
+                } else {
+                    echo "Error al actualizar productos: " . $conn->error;
+                }  
+            }
+        }
         $payment = MercadoPago\Payment::find_by_id($payment_id);
         
         if ($payment) {
@@ -81,16 +116,6 @@ include "./conexionbs.php";
             echo "No se encontró un pago con el ID especificado.";
         }
        
-        
-
-
-
-        $sql="DELETE FROM historica WHERE id_historica = ". $id_pedido;
-        if ($conn->query($sql) === TRUE) {
-            echo "Pedido eliminado";
-        } else {
-            echo "Error al actualizar productos: " . $conn->error;
-        }  
         header("location: ../historial.php");
     }
    $conn->close();
