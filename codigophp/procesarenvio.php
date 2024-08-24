@@ -56,6 +56,42 @@ include "./conexionbs.php";
             echo "Error al actualizar productos: " . $conn->error;
         }  
         header("location: ../historial.php");
+    }else if ($tipodeboton == "cancelar"){
+        include "./mercadopago.php";
+        require_once '../vendor/autoload.php'; 
+
+        MercadoPago\SDK::setAccessToken($credencial1);
+
+        $payment_id = '1234567890';
+        
+        $payment = MercadoPago\Payment::find_by_id($payment_id);
+        
+        if ($payment) {
+            $payment->status = 'cancelled';
+        
+            $result = $payment->update();
+        
+            if ($result) {
+                echo "El pago con ID $payment_id ha sido cancelado exitosamente.";
+                
+            } else {
+                echo "Hubo un error al intentar cancelar el pago.";
+            }
+        } else {
+            echo "No se encontró un pago con el ID especificado.";
+        }
+       
+        
+
+
+
+        $sql="DELETE FROM historica WHERE id_historica = ". $id_pedido;
+        if ($conn->query($sql) === TRUE) {
+            echo "Pedido eliminado";
+        } else {
+            echo "Error al actualizar productos: " . $conn->error;
+        }  
+        header("location: ../historial.php");
     }
    $conn->close();
 

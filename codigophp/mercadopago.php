@@ -1,0 +1,6 @@
+<?php
+
+$credencial1 = "APP_USR-7854084530284610-081814-ef64e9962983f3b48c4cdc11a75632d7-1950389309";
+$credencial2 = "APP_USR-73e6ac01-337e-4425-ad81-c97a449906f3";
+
+?>
