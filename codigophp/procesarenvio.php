@@ -113,7 +113,7 @@ include "./conexionbs.php";
        
             
      
-        //header("location: ../historial.php");
+            header("location: ../historial.php");
     }
    $conn->close();
 
