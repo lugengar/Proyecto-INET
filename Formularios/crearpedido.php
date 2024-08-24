@@ -55,7 +55,7 @@ if(!empty($_SESSION['pedido'])){
     }
     
     // Vincular los parámetros con tipos correctos
-    $metodo = traducirMetodoPago($_GET["payment_type"]).",".$_GET["payment_id"];
+    $metodopago = traducirMetodoPago($_GET["payment_type"]).",".$_GET["payment_id"];
     $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedidos, $fk_usuario,$_SESSION['total'],$metodopago,date('Y-m-d'));
     $stmt->execute();
 

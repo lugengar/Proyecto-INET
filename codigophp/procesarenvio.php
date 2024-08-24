@@ -1,4 +1,8 @@
 <?php
+        use MercadoPago\Client\Payment\PaymentClient;
+        use MercadoPago\MercadoPagoConfig;
+        use MercadoPago\Client\Common\RequestOptions;    
+        use MercadoPago\Exceptions\MPApiException;
 function dividirTexto($texto) {
     if (strpos($texto, ',') !== false) {
         $partes = explode(",", $texto);
@@ -70,12 +74,12 @@ include "./conexionbs.php";
     }else if ($tipodeboton == "cancelar"){
         $sql2 = "SELECT * FROM pedidos WHERE id_pedido = ". $id_pedido;
         $result2 = $conn->query($sql2);
+
         
-        require_once '../vendor/autoload.php'; 
+        require '../vendor/autoload.php';
 
-        MercadoPago\SDK::setAccessToken("APP_USR-7854084530284610-081814-ef64e9962983f3b48c4cdc11a75632d7-1950389309");
-
-        $payment_id = '';
+        MercadoPagoConfig::setAccessToken("APP_USR-7854084530284610-081814-ef64e9962983f3b48c4cdc11a75632d7-1950389309");
+       
         if ($result2 && $result2->num_rows > 0) {
             foreach ($result2 as $index => $row) {
                 $estado = "cancelado";
@@ -86,7 +90,14 @@ include "./conexionbs.php";
                 $metodo_pago = $row['metodo_pago']; 
                 $fecha_pedido = $row['fecha_pedido'];
                 $payment_id = dividirTexto($metodo_pago)[1];
-                $stmt = $conn->prepare("INSERT INTO historica (estado, fecha_entrega, productos_pedido, fk_usuario, precio_total, metodo_pago, fecha_pedido) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+                $client = new PaymentClient();
+                $request_options = new RequestOptions();
+                $request_options->setCustomHeaders(["X-Idempotency-Key: 77e1c83b-7bb0-437b-bc50-a7a58e5660ac"]);
+                $payment = $client->cancel($payment_id, $request_options);
+                echo $payment->status;
+
+                /*$stmt = $conn->prepare("INSERT INTO historica (estado, fecha_entrega, productos_pedido, fk_usuario, precio_total, metodo_pago, fecha_pedido) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("sssssss", $estado, $fecha_entrega, $productos_pedido, $fk_usuario, $precio_total, $metodo_pago, $fecha_pedido);
                 $stmt->execute();
                 $stmt->close();
@@ -96,29 +107,16 @@ include "./conexionbs.php";
                     echo "Pedido eliminado";
                 } else {
                     echo "Error al actualizar productos: " . $conn->error;
-                }  
+                }  */
             }
-        }
-        $payment = MercadoPago\Payment::find_by_id($payment_id);
-        
-        if ($payment) {
-            $payment->status = 'cancelled';
-        
-            $result = $payment->update();
-        
-            if ($result) {
-                echo "El pago con ID $payment_id ha sido cancelado exitosamente.";
-                
-            } else {
-                echo "Hubo un error al intentar cancelar el pago.";
-            }
-        } else {
-            echo "No se encontró un pago con el ID especificado.";
         }
        
-        header("location: ../historial.php");
+            
+     
+        //header("location: ../historial.php");
     }
    $conn->close();
 
 }
 ?>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>

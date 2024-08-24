@@ -63,9 +63,9 @@ function verTodasLasFacturas() {
 
                 if($row['estado'] == "entregado"){
                     echo '<button value="borrar" name="envio" type="submit">Eliminar pedido</button>';
-                }else if($row['estado'] == "en preparacion"){
+                }/*else if($row['estado'] == "en preparacion"){
                     echo '<button value="cancelar" name="envio" type="submit">Cancelar pedido</button>';
-                }
+                }*/
                 echo '</form>';
             }
         }
